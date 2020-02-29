@@ -6,7 +6,8 @@ const Tweet = require('./tweet').Tweet
 var T = new Twit(config);
 var params = { 
     q: 'Google',
-    count: 100
+    language: 'en',
+    count: 100    
 }
 //const tweet = new Tweet("", "","","","","","");
 //console.log(tweet);
