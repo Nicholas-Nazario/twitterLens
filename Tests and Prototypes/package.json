@@ -10,6 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "require": "^2.4.20",
     "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3"
   }
 }
