@@ -1,3 +1,7 @@
+// var Twit = require('twit');
+// var config = require('./config')
+// const Tweet = require('./tweet').Tweet 
+
 function graphql(query, variables = {}) {
   return fetch('/admin/api', {
     method: 'POST',
@@ -55,11 +59,37 @@ function addTodo(event) {
   const element = form.elements['add-item'];
   if (element) {
     graphql(ADD_TODO, { name: element.value }).then(fetchData);
+    //searchTwitter(element.value)
   }
 
   // Clear the form
   form.reset();
 }
+
+// function searchTwitter(keyword){
+//   var T = new Twit(config);
+//   var params = { 
+//     q: keyword,
+//     language: 'en',
+//     count: 100    
+//   }
+//   T.get('search/tweets', params, searchedData);
+// }
+
+// function searchedData(err, data, response) {
+//   //console.log(data);
+//   var tweets = [];
+//   // Loop through the returned tweets
+//   for(let i = 0; i < data.statuses.length; i++) {
+//     // Get the tweet from the returned data
+//     //let tweetText = { text: data.statuses[i].text }
+//     let tweet = data.statuses[i];
+//     tweets.push(new Tweet(tweet.created_at, tweet.id, tweet.text, tweet.entities, tweet.user, tweet.retweet_count, tweet.favorite_count));
+//      //console.log(tweetText)
+//   }
+
+//   console.log(tweets[0])
+// }
 
 function removeTodo(todo) {
   graphql(REMOVE_TODO, { id: todo.id }).then(fetchData);
