@@ -16,5 +16,3 @@ module.exports.Tweet = class Tweet {
         console.log(`Name is ${this.user.screen_name}, Text is: ${this.text}`); 
     } 
 } 
-
-//export default Tweet

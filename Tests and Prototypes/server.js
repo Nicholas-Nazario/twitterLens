@@ -2,7 +2,7 @@ console.log("Test started")
 var Twit = require('twit');
 var config = require('./config')
 const Tweet = require('./tweet').Tweet 
-//import Tweet from './tweet'
+
 var T = new Twit(config);
 var params = { 
     q: 'Google',
