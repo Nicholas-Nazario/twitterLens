@@ -1,6 +1,5 @@
-// var Twit = require('twit');
-// var config = require('./config')
-// const Tweet = require('./tweet').Tweet 
+import { searchTwitter } from './../index.js'
+//import { searchedData } from './../index.js'
 
 function graphql(query, variables = {}) {
   return fetch('/admin/api', {
@@ -59,7 +58,7 @@ function addTodo(event) {
   const element = form.elements['add-item'];
   if (element) {
     graphql(ADD_TODO, { name: element.value }).then(fetchData);
-    //searchTwitter(element.value)
+    searchTwitter(element.value)
   }
 
   // Clear the form
@@ -67,6 +66,8 @@ function addTodo(event) {
 }
 
 // function searchTwitter(keyword){
+//   var Twit = require(['./../index']).Twit;
+//   var config = require(['./config']) 
 //   var T = new Twit(config);
 //   var params = { 
 //     q: keyword,
@@ -77,6 +78,7 @@ function addTodo(event) {
 // }
 
 // function searchedData(err, data, response) {
+//   const Tweet = require(['./tweet']).Tweet 
 //   //console.log(data);
 //   var tweets = [];
 //   // Loop through the returned tweets
