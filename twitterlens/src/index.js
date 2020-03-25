@@ -3,13 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Stock from './Stock';
-import Twitter from './Twitter';
+// import Twitter from './Twitter';
+import Navbar from './components/Navbar';
 import * as serviceWorker from './serviceWorker';
 
+let componentList = (
+  <div>
+    <Navbar />
+    <Stock />
+  </div>
+);
+
 ReactDOM.render(
-  <Stock />,
+  componentList,
   document.getElementById('root')
 );
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
