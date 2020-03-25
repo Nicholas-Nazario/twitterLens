@@ -7,10 +7,7 @@ import Twitter from './Twitter';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Twitter />
-    <Stock />
-  </React.StrictMode>,
+  <Stock />,
   document.getElementById('root')
 );
 
