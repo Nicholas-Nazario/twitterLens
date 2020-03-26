@@ -3,7 +3,7 @@ Viewing Twitter through a custom Lens
 
 # Running Web App
 
-The follwoing instructions can be used to run the web application
+The following instructions can be used to run the web application
 
 ```bash
 cd twitterlens
@@ -37,7 +37,7 @@ The Twitter Lens Team used __ESLint__ as a javascript linter to enforce ES6 stan
 
 # Thrid Party Components
 
-1. Bootstrap, a free and open-source style sheet, is used to style our componenets
+1. Bootstrap, a free and open-source style sheet, is used to style our components
 2. AlphaVantage, a stock data API, is used by Twitter Lens to collect stock pricing
 3. Twitter's developer API is used by Twitter Lens to collect, filter, and display tweets
 4. React.js, a free and open-source web framework, is used by Twitter Lens as the framework for the web application
