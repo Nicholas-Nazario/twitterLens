@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 /*import Form from 'react-bootstrap/Form';*/
 import {Row} from 'react-bootstrap';
 import axios from 'axios';
+import {Chart} from "react-google-charts";
 
 class Stock extends Component {
   constructor() {
@@ -50,6 +51,42 @@ class Stock extends Component {
     let stock_data = this.state.stock_data;
     const value = this.state.value;
 
+    const options = {
+      title: "Age vs. Weight comparison",
+      hAxis: { title: "Age", viewWindow: { min: 0, max: 15 } },
+      vAxis: { title: "Weight", viewWindow: { min: 0, max: 15 } },
+      legend: "none"
+    };
+    const data = [
+      [
+        {
+          type: "string",
+          id: "Date"
+        },
+        {
+          type: "number",
+          label: "Something"
+        },
+        {
+          type: "number",
+          label: "Something"
+        },
+        {
+          type: "number",
+          label: "Something"
+        },
+        {
+          type: "number",
+          label: "Something"
+        }
+      ],
+      ["Mon", 20, 28, 38, 45],
+      ["Tue", 31, 38, 55, 66],
+      ["Wed", 50, 55, 77, 80],
+      ["Thu", 77, 77, 66, 50],
+      ["Fri", 68, 66, 22, 15]
+    ];
+
     return (
       <div className="App">
         <header className="App-header">
@@ -63,6 +100,14 @@ class Stock extends Component {
                     onChange={this.handleChange}/>
                     <button className="search_button" onClick={this.handleClick}>Stock Search</button>
                 </form>
+            </Row>
+            <Row>
+              <Chart
+                  chartType="CandlestickChart"
+                  width="800px"
+                  height="500px"
+                  data={data}
+                />
             </Row>
         </header>
       </div>
