@@ -101,14 +101,16 @@ class Stock extends Component {
                     <button className="search_button" onClick={this.handleClick}>Stock Search</button>
                 </form>
             </Row>
-            <Row>
-              <Chart
-                  chartType="CandlestickChart"
-                  width="800px"
-                  height="500px"
-                  data={data}
-                />
-            </Row>
+            <span>
+              <a style={{ marginLeft: '.5rem' }} >
+                <Chart
+                    chartType="CandlestickChart"
+                    width="800px"
+                    height="500px"
+                    data={data}
+                  /> 
+              </a>
+            </span>
         </header>
       </div>
     );
