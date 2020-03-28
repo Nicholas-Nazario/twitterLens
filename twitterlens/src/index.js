@@ -7,7 +7,7 @@ import Twitter from './Twitter';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Stock />,
+  <Twitter />,
   document.getElementById('root')
 );
 
