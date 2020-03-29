@@ -5,12 +5,14 @@ import App from './App';
 import Stock from './Stock';
 // import Twitter from './Twitter';
 import Navbar from './components/Navbar';
+import Stockchart from './components/Stockchart';
 import * as serviceWorker from './serviceWorker';
 
 let componentList = (
   <div>
     <Navbar />
     <Stock />
+    <Stockchart />
   </div>
 );
 
