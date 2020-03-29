@@ -1,10 +1,17 @@
+// React Imports
 import React, {Component} from 'react';
+// Logo for the Navbar
 import Logo from './logoTransparent.png';
 
+// This class creates the Navbar Object.
+// This component is displayed on everypage to allow the user to navigate the site
+// It extends the react Component inheriting essetial react functionality such as render()
 class Navbar extends Component {
-        
+    // Render the below HTML code and export as a Navbar Object
+    // This lets the index.js read the HTML as a single object
     render() {
         return (
+            // Navabar component and formatting is following the template from BootStrap 4.4.x
             <div className="Navbar">
                 <header className="Navbar-header">
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -20,6 +27,9 @@ class Navbar extends Component {
                             <li class="nav-item active">
                                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                             </li>
+
+                            {/* NOTE:This is commented out until we decide if we want seperate pages or if we wanted a merged data page */}
+                            
                             {/* <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Data Pages

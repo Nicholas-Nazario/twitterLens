@@ -1,7 +1,13 @@
+// React Imports
 import React, {Component} from 'react';
 
+
+// This class creates the About Object.
+// This component is displayed on the "About Twitter Lens" page to describe the goal of our project
+// It extends the react Component inheriting essetial react functionality such as render()
 class About extends Component {
-        
+    // Render the below HTML code and export as an About Object
+    // This lets the index.js read the HTML as a single object
     render() {
         return (
             <div className="About">
