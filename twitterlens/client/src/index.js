@@ -10,12 +10,11 @@ import * as serviceWorker from './serviceWorker';
 // JavaScript Component Imports
 import App from './App';
 import Stock from './Stock';
-// import Twitter from './Twitter';
+import Twitter from './Twitter';
 import Navbar from './components/Navbar';
 import NotFound from './components/NotFound';
 import About from './components/About';
 import Team from './components/Team';
-
 
 
 // This is the react routing table. 
@@ -28,7 +27,7 @@ const routing = (
       <Navbar />
       {/* Create Routing Table as described above */}
       <Switch>
-        <Route exact path="/" component={Stock} />
+        <Route exact path="/" component={Twitter} />
         <Route path="/stock" component={Stock} />
         <Route path="/about" component={About} />
         <Route path="/Team" component={Team} />
