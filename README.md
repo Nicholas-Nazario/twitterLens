@@ -58,7 +58,9 @@ The stakeholders of this project are Professor John Sturman, Teaching Assistants
 The following instructions can be used to run the web application
 
 ```bash
-cd twitterlens
+cd twitterlens/client
+npm install
+cd ..
 npm install
 npm start
 ```
