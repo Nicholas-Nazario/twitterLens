@@ -12,9 +12,9 @@ import App from './App';
 import Stock from './Stock';
 import Twitter from './Twitter';
 import Navbar from './components/Navbar';
-import NotFound from './components/NotFound';
-import About from './components/About';
-import Team from './components/Team';
+import NotFound from './NotFound';
+import About from './About';
+import Team from './Team';
 
 
 // This is the react routing table. 
