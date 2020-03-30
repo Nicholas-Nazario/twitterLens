@@ -10,12 +10,11 @@ import * as serviceWorker from './serviceWorker';
 // JavaScript Component Imports
 import App from './App';
 import Stock from './Stock';
-// import Twitter from './Twitter';
+import Twitter from './Twitter';
 import Navbar from './components/Navbar';
 import NotFound from './NotFound';
 import About from './About';
 import Team from './Team';
-
 
 
 // This is the react routing table. 
@@ -28,12 +27,12 @@ const routing = (
       <Navbar />
       {/* Create Routing Table as described above */}
       <Switch>
-        <Route exact path="/" component={Stock} />
+        <Route exact path="/" component={Twitter} />
         <Route path="/stock" component={Stock} />
         <Route path="/about" component={About} />
-        <Route path="/team" component={Team} />
+        <Route path="/Team" component={Team} />
         {/*NOTE: This is set to NotFound until we decide if we want sepereate pages or a merged data page */}
-        <Route path="/twitter" component={NotFound} />
+        <Route path="/twitter" component={Twitter} />
         {/* NOTE: This is were all unassigned extensions redirect */}
         <Route component={NotFound} />
       </Switch>
