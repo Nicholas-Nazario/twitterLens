@@ -46,7 +46,7 @@ class Stock extends Component {
     const stock_api = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${term}&apikey=${api_key}`;
     console.log(term);
     console.log(stock_api)
-    
+  
     axios.get(stock_api)
     .then(res => {
       console.log(res.data);
