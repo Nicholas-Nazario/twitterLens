@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 /*import Form from 'react-bootstrap/Form';*/
 import {Row} from 'react-bootstrap';
 import axios from 'axios';
+import SearchBar from './components/Search.js';
 
 class Stock extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class Stock extends Component {
 
   handleChange(e) {
     this.setState( {
-      change_value: e.target.value
+      value: e.target.value
     });
   }
 
@@ -28,16 +29,15 @@ class Stock extends Component {
     this.setState ({
       value: '',
       term: this.state.value
-    })
-    ;
+    });
 
-    let term = this.state.value;
-    const api_key = '${process.env.REACT_APP_STOCK_API_KEY}';
+    let term = (this.state.value).toString();
+    const api_key = `${process.env.REACT_APP_STOCK_API_KEY}`;
+    const stock_api = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${term}&apikey=${api_key}`;
     console.log(term);
-    
-    const stock_api = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=${api_key}';
     console.log(stock_api)
     
+  
     
     axios.get(stock_api)
     .then(res => {
@@ -57,12 +57,10 @@ class Stock extends Component {
             Welcome to the TwitterLens Stock Analytics Page
           </p>
             <Row>
-                <form className = "search_bar">
-                  <input className="search_input"
-                    defaultValue = {this.state.value}
-                    onChange={this.handleChange}/>
-                    <button className="search_button" onClick={this.handleClick}>Stock Search</button>
-                </form>
+              <SearchBar 
+                defaultValue={this.state.value}
+                onChange={this.handleChange}
+                onClick={this.handleClick}/>
             </Row>
         </header>
       </div>
