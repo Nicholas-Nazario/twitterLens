@@ -1,11 +1,11 @@
 // React imports
 import React, {Component} from 'react';
 
-// This class creates the Team Object.
+// This class creates the Team Page.
 // This component is displayed on the "Dev Team" page to describe the goal of our project
 // It extends the react Component inheriting essetial react functionality such as render()
 class Team extends Component {
-    // Render the below HTML code and export as a Team Object
+    // Render the below HTML code and export as Team
     // This lets the index.js read the HTML as a single object 
     render() {
         return (

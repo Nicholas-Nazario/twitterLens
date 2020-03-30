@@ -12,9 +12,9 @@ import App from './App';
 import Stock from './Stock';
 // import Twitter from './Twitter';
 import Navbar from './components/Navbar';
-import NotFound from './components/NotFound';
-import About from './components/About';
-import Team from './components/Team';
+import NotFound from './NotFound';
+import About from './About';
+import Team from './Team';
 
 
 
@@ -31,7 +31,7 @@ const routing = (
         <Route exact path="/" component={Stock} />
         <Route path="/stock" component={Stock} />
         <Route path="/about" component={About} />
-        <Route path="/Team" component={Team} />
+        <Route path="/team" component={Team} />
         {/*NOTE: This is set to NotFound until we decide if we want sepereate pages or a merged data page */}
         <Route path="/twitter" component={NotFound} />
         {/* NOTE: This is were all unassigned extensions redirect */}
