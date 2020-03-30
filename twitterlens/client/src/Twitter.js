@@ -1,17 +1,12 @@
-import React, {Component} from 'react';
-/*import Button from 'react-bootstrap/Button';*/
-/*import Form from 'react-bootstrap/Form';*/
+import React from 'react';
 import {Row, Col} from 'react-bootstrap';
-import TwitterService from './TwitterService'
 import App from './components/App'
+import axios from 'axios';
+import qs from 'query-string'
 
 class Twitter extends React.Component {
-  state = {
-    q: '',
-    isLoading: false,
-    tweets: [],
-  };
-
+  //constructor for Twitter
+  //makes call to superclass React.Component and sets up this.state
   constructor() {
     super();
     this.state = {
@@ -21,24 +16,40 @@ class Twitter extends React.Component {
     };
   }
 
+  //set initial state variables
   state = {
     q: '',
     isLoading: false,
     tweets: [],
   };
 
+  //function that makes an api call to search Twitter
   searchTwitter(){
+    //set the state to reflect that the tweets are loading in
     this.setState({
       isLoading: true,
     });
 
-    const q = '@Google';
+    //parse the q value from this.state.q
+    const q = this.state.q;
 
-    //console.log(q);
-    TwitterService.searchTweets({
-      q: '@Google',
-    }).then(tweets => {
-      //fetch.addHistory(q, tweets.length);
+    //setup the parameters for the api call
+    const params = {
+      q
+    }
+
+    //setup the options for the api call
+    const options = {
+      url: `/tweets?${qs.stringify(params)}`,
+      method: 'GET',
+    };
+
+    //make call to /tweets route to the proxy server with the params and options
+    axios(options)
+    .then(res => {
+      //parse the tweets from the response data
+      const tweets = res.data.items;
+      //update the states of the variables tweets and isLoading
       this.setState({
         tweets,
         isLoading: false,
@@ -46,38 +57,22 @@ class Twitter extends React.Component {
     });
   }
 
+  //function that handles when the user presses the submit button
   onSearch = e => {
     e.preventDefault();
 
     this.searchTwitter();
   };
 
+  //function that handles when the value of the input textfield changes
   onChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
 
-  handleClick(e) {
-    e.preventDefault();
-
-    this.search();
-    
-    
-    // const response = await axios.get(twitter_api)
-    // .then(res => {
-    //   console.log(res.data);
-    // })
-    // .catch(error => console.log(error))
-
-    // console.log(response.data)
-
-  }
-
+  //return a rendering of the html and css code below
   render() {
-    let twitter_data = this.state.twitter_data;
-    const value = this.state.value;
-
     return (
       <App>
         <header className="App-header">

@@ -32,7 +32,7 @@ const routing = (
         <Route path="/about" component={About} />
         <Route path="/Team" component={Team} />
         {/*NOTE: This is set to NotFound until we decide if we want sepereate pages or a merged data page */}
-        <Route path="/twitter" component={NotFound} />
+        <Route path="/twitter" component={Twitter} />
         {/* NOTE: This is were all unassigned extensions redirect */}
         <Route component={NotFound} />
       </Switch>
