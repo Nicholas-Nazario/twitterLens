@@ -52,7 +52,7 @@ The stakeholders of this project are Professor John Sturman, Teaching Assistants
 
 
 # Application Information
-## Obtaining and Hiding Your API Keys
+## Obtaining, Hiding and Using Your API Keys
 
 The following instructions must be used to obtain Stock and Twitter API keys before running the web application:
 
@@ -61,26 +61,25 @@ Stock API
 2. Follow the instructions and add a valid email as well as an organization if you have one. 
 3. Copy the Free API Key that appears on the webpage after you submit their form (keep in a safe place)
 
-Hiding your API Keys in React
-1. Create a file named .env in the root of the project's directory
-    ```
-    - twitterlens
-      - client
-       - public
-       - src
-       - .env
-       - .gitignore
-       - package-lock.json
-       - package.json
-    ```
-2. Inside the .env file, add your API key names and prepend "REACT_APP_" to all variable names.
+Twitter API
+1. Navigate to the Stock Developer page to request a Developer account at https://developer.twitter.com/en/apply-for-access **NOTE** You must have a Twitter account to apply for a Twitter Developer account
+2. Follow the instructions to apply for the Twitter Developer Account and request an api key by registering your application
+3. Copy the consumer key, consumer secret, access token, and access token secret for later use  (keep in a safe place)
+
+Hiding and Using Your API Keys
+1. Create an environment variable file named .env in the twitterlens/client/src directory of the project
+2. Inside the .env file, add your API key names and values to the file in the following format by replacing YOUR_API_KEY_GOES_HERE with the value of the corresponding API key: 
     ```
     // .env
     
     REACT_APP_STOCK_API="YOUR_API_KEY_GOES_HERE"
-    ```
- 
-3. Add the .env file to your .gitignore file so it will not be committed to your GitHub. 
+
+    TWITTER_CONSUMER_KEY=YOUR_API_KEY_GOES_HERE
+    TWITTER_CONSUMER_SECRET_KEY=YOUR_API_KEY_GOES_HERE
+    TWITTER_ACCESS_TOKEN=YOUR_API_KEY_GOES_HERE
+    TWITTER_ACCESS_TOKEN_SECRET=YOUR_API_KEY_GOES_HERE
+    ``` 
+3. The .env file is a part of the .gitignore file so it will not be committed to your GitHub. 
     ```
     // .gitignore
     

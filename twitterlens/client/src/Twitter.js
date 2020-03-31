@@ -3,6 +3,7 @@ import {Row, Col} from 'react-bootstrap';
 import App from './components/App'
 import axios from 'axios';
 import qs from 'query-string'
+import './Twitter.css'
 
 class Twitter extends React.Component {
   //constructor for Twitter
@@ -118,81 +119,6 @@ class Twitter extends React.Component {
               </div>
             </Row>
         </header>
-        <style jsx global>{`
-          body {
-            font-family: sans-serif;
-          }
-          a {
-            color: #00A4EF;
-            text-decoration: none;
-          }
-          p {
-            margin: 0;
-          }
-        `}</style>
-        <style jsx>
-          {`
-            .content {
-              padding: 0 15px;
-            }
-            .search-bar {
-              height: 15vh;
-              border-radius: 10px;
-              box-shadow: 0 5px 20px 0 rgba(204, 204, 204, 0.5);
-              padding: 10px 15px;
-              margin: 10px 0;
-              word-break: break-all;
-            }
-            .category-item {
-              color: #00A4EF;
-              margin-right: 10px;
-              cursor: pointer;
-            }
-            .tweet-container {
-              height: 75vh;
-              background: #fff;
-              padding: 0 15px;
-              overflow-y: scroll;
-              border-radius: 10px;
-              box-shadow: 0 5px 20px 0 rgba(204, 204, 204, 0.5);
-            }
-            .tweet-item {
-              color: #14171a;
-              border-bottom: 1px solid #e6ecf0;
-              word-break: break-all;
-              margin: 10px 0;
-              padding-bottom: 10px;
-            }
-            .profile-image {
-              height: 30px;
-              border-radius: 50%;
-              border: 1px solid #ccc;
-            }
-            .tweet-text {
-              margin: 5px 0;
-            }
-            .input-search {
-              width: 100%;
-              box-sizing: border-box;
-              border: 0;
-              border-bottom: 1px solid #d3dfef;
-              font-size: 14px;
-              letter-spacing: 0.3px;
-              padding: 14px 20px;
-            }
-            .btn {
-              width: 100%;
-              box-sizing: border-box;
-              border: 0;
-              border-bottom: 1px solid #d3dfef;
-              font-size: 14px;
-              letter-spacing: 0.3px;
-              padding: 14px 20px;
-              transition: all 0.2s linear;
-              box-shadow: 0 4px 16px 0 rgba(69, 91, 99, 0.08);
-            }
-          `}
-        </style>
       </App>
     );
   }
