@@ -52,7 +52,46 @@ The stakeholders of this project are Professor John Sturman, Teaching Assistants
 
 
 # Application Information
+## Obtaining and Hiding Your API Keys
 
+The following instructions must be used to obtain Stock and Twitter API keys before running the web application:
+
+Stock API
+1. Navigate to the Alpha Vantage Support page at https://www.alphavantage.co/support/#api-key
+2. Follow the instructions and add a valid email as well as an organization if you have one. 
+3. Copy the Free API Key that appears on the webpage after you submit their form (keep in a safe place)
+
+Hiding your API Keys in React
+1. Create a file named .env in the root of the project's directory
+    ```
+    - twitterlens
+      - client
+       - public
+       - src
+       - .env
+       - .gitignore
+       - package-lock.json
+       - package.json
+    ```
+2. Inside the .env file, add your API key names and prepend "REACT_APP_" to all variable names.
+    ```
+    // .env
+    
+    REACT_APP_STOCK_API="YOUR_API_KEY_GOES_HERE"
+    ```
+ 
+3. Add the .env file to your .gitignore file so it will not be committed to your GitHub. 
+    ```
+    // .gitignore
+    
+    #api keys
+    .env
+    
+    #dependencies
+    /node_modules
+    ...
+    ```
+    
 ## Running Web App
 
 The following instructions can be used to run the web application
