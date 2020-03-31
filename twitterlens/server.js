@@ -1,5 +1,5 @@
 const express = require("express");
-var Twit = require('twit');
+let Twit = require('twit');
 const dotenv = require("dotenv")
 
 //pulls api keys from an environment variable file
@@ -21,7 +21,7 @@ app.get("/tweets", (req, res)=> {
 
   //parse q from the query and setup the rest of the parameters for the api call
   const q = req.query.q;
-  var params = { 
+  const params = { 
       q,
       language: 'en',
       count: 100    
