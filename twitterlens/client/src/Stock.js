@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {Row} from 'react-bootstrap';
 import axios from 'axios';
 import SearchBar from './components/Search.js';
+import _ from 'lodash';
 
 // This class creates the Stock part of a Page
 // This component will be displayed on the front page 
@@ -13,7 +14,9 @@ class Stock extends Component {
     super();
     this.state = {
       term:null,
-      value: ''
+      value: '', 
+      stocks: [],
+      dataRet: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -49,6 +52,15 @@ class Stock extends Component {
     axios.get(stock_api)
     .then(res => {
       console.log(res.data);
+      console.log(res.data['Time Series (Daily)']['2020-03-31']);
+      console.log(Array.from(res.data['Time Series (Daily)']['2020-03-31']).map((stock) => [{open: stock['1. open'], high: stock['2. high'], low: stock['3. low'], close: stock['4. close'], volume: stock['5. volume']}]));
+      let stocks = _.flattenDeep(Array.from(res.data['Time Series (Daily)']['2020-03-31']).map((stock) => [{open: stock['1. open'], high: stock['2. high'], low: stock['3. low'], close: stock['4. close'], volume: stock['5. volume']}]));
+      console.log(stocks);
+      this.setState({
+        stocks,
+        dataRet: true
+      });
+      
     })
     .catch(error => console.log(error))
   }
@@ -56,9 +68,8 @@ class Stock extends Component {
   // Render the below HTML code and export as Stock
   // This lets the index.js read the HTML as a single object
   render() {
-    let stock_data = this.state.stock_data;
+    let stocks = this.state.stocks;
     const value = this.state.value;
-
     return (
       <div className="App">
         <header className="App-header">
@@ -75,6 +86,16 @@ class Stock extends Component {
                 defaultValue={this.state.value}
                 onChange={this.handleChange}
                 onClick={this.handleClick}/>
+            </Row>
+            <Row>
+              <div className = "stock_display">
+                {this.state.dataRet &&
+                  
+                  <div>
+                    <p>{this.state.stocks.toString()}</p>
+                  </div> 
+                }
+              </div>
             </Row>
         </header>
       </div>

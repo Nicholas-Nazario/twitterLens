@@ -41,4 +41,5 @@ function SearchBar(props) {
             </div> 
     );
 }
-export default DropdownExampleScrolling;
+//export default DropdownExampleScrolling;
+export default SearchBar;

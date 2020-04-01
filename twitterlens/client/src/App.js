@@ -14,7 +14,6 @@ function App() {
     <div>
       <Navbar />
       <Stock />
-      <Stockchart />
       <Twitter />
     </div>
   );
