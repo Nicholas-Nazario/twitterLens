@@ -1,12 +1,29 @@
 //React Imports
 import React from 'react';
+import { Dropdown } from 'semantic-ui-react'
+import _ from 'lodash'
+import { Button } from 'semantic-ui-react'
+
+const getOptions = (number, prefix = 'Choice ') => _.times(number, (index) => ({
+    key: index,
+    text: `${prefix}${index}`,
+    value: index,
+}))
+
+const DropdownExampleScrolling = () => (
+    <Dropdown placeholder='Select choice' scrolling options={getOptions(15)} />
+)
 
 // This class creates the Search Bar Object
 // This component is only displayed within pages that need to access a search bar
 function SearchBar(props) {
         //Return the below HTML code and export as a SearchBar object
         //This allows a specific component (ex. Stock.js) render it within the page
-        return (
+    
+
+    
+    
+    return (
             <div className="search_bar">
                 <form className = "search_bar_form">
                     {/* 
@@ -22,6 +39,6 @@ function SearchBar(props) {
                     <button className="search_button" onClick={props.onClick}>Stock Search</button>
                 </form>
             </div> 
-          );
+    );
 }
-export default SearchBar;
+export default DropdownExampleScrolling;

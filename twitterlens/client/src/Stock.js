@@ -4,7 +4,6 @@ import {Row} from 'react-bootstrap';
 import axios from 'axios';
 import SearchBar from './components/Search.js';
 
-
 // This class creates the Stock part of a Page
 // This component will be displayed on the front page 
 // It extends the react Component inheriting essential react functionality such as render()

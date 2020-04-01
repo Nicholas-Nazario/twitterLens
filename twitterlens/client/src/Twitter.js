@@ -76,9 +76,6 @@ class Twitter extends React.Component {
     return (
       <App>
         <header className="App-header">
-          <p>
-            Welcome to the TwitterLens Tweet Analytics Page
-          </p>
             <Row>
                 <form className = "search-bar">
                   <input 
