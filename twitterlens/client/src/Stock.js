@@ -54,7 +54,8 @@ class Stock extends Component {
       console.log(res.data);
       console.log(res.data['Time Series (Daily)']['2020-03-31']);
       console.log(Array.from(res.data['Time Series (Daily)']['2020-03-31']).map((stock) => [{open: stock['1. open'], high: stock['2. high'], low: stock['3. low'], close: stock['4. close'], volume: stock['5. volume']}]));
-      let stocks = _.flattenDeep(Array.from(res.data['Time Series (Daily)']['2020-03-31']).map((stock) => [{open: stock['1. open'], high: stock['2. high'], low: stock['3. low'], close: stock['4. close'], volume: stock['5. volume']}]));
+      // let stocks = _.flattenDeep(Array.from(res.data['Time Series (Daily)']['2020-03-31']).map((stock) => [{open: stock['1. open'], high: stock['2. high'], low: stock['3. low'], close: stock['4. close'], volume: stock['5. volume']}]));
+      let stocks = res.data['Time Series (Daily)']['2020-03-31'];
       console.log(stocks);
       this.setState({
         stocks,
@@ -90,10 +91,30 @@ class Stock extends Component {
             <Row>
               <div className = "stock_display">
                 {this.state.dataRet &&
-                  
                   <div>
-                    <p>{this.state.stocks.toString()}</p>
-                  </div> 
+                    <table class="table table-striped"> 
+                      <thead>
+                        <tr>
+                          <th scope="col">Open ($)</th>
+                          <th scope="col">High ($)</th>
+                          <th scope="col">Low ($)</th>
+                          <th scope="col">Close ($)</th>
+                          <th scope="col">Volume (Shares)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">{stocks["1. open"]}</th>
+                          <td>{stocks["2. high"]}</td>
+                          <td>{stocks["3. low"]}</td>
+                          <td>{stocks["4. close"]}</td>
+                          <td>{stocks["5. volume"]}</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                      </tfoot>
+                    </table>
+                  </div>
                 }
               </div>
             </Row>
