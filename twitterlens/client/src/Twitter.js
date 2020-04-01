@@ -3,6 +3,7 @@ import {Row, Col} from 'react-bootstrap';
 import App from './components/App'
 import axios from 'axios';
 import qs from 'query-string'
+import './Twitter.css'
 
 class Twitter extends React.Component {
   //constructor for Twitter
