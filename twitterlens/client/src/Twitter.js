@@ -130,7 +130,7 @@ class Twitter extends React.Component {
         <style jsx>
           {`
             .content {
-              padding: 0 15px;
+              padding: 15px;
             }
             .search-bar {
               height: 15vh;
@@ -147,6 +147,7 @@ class Twitter extends React.Component {
             }
             .tweet-container {
               height: 75vh;
+              font-size: 15px;
               background: #fff;
               padding: 0 15px;
               overflow-y: scroll;

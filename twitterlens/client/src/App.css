@@ -43,6 +43,10 @@
   color: white;
 }
 
+.Twitter {
+  font-size: calc(8px + 2vmin);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
