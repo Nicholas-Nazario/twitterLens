@@ -4,12 +4,13 @@ import App from './components/App'
 import axios from 'axios';
 import qs from 'query-string'
 import './Twitter.css'
+import SearchBar from './components/Search.js';
 
 class Twitter extends React.Component {
   //constructor for Twitter
   //makes call to superclass React.Component and sets up this.state
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       q: '',
       isLoading: false,
@@ -23,6 +24,45 @@ class Twitter extends React.Component {
     isLoading: false,
     tweets: [],
   };
+
+  searchTwitter2(keyword){
+    this.state.q = keyword;
+    this.setState({
+      q: keyword,
+      isLoading: false,
+      tweets: [],
+    })
+    console.log(keyword);
+    console.log("this.state.q: " + this.state.q);
+    const q = keyword;
+    //setup the parameters for the api call
+    const params = {
+      q
+    }
+
+    //setup the options for the api call
+    const options = {
+      url: `/tweets?${qs.stringify(params)}`,
+      method: 'GET',
+    };
+
+    console.log("q: " + this.state.q);
+    console.log("url: " + `/tweets?${qs.stringify(params)}`);
+
+    //make call to /tweets route to the proxy server with the params and options
+    axios(options)
+    .then(res => {
+      //parse the tweets from the response data
+      const tweets = res.data.items;
+      //update the states of the variables tweets and isLoading
+      this.setState({
+        tweets,
+        isLoading: false,
+      });
+      var div = document.getElementById("tweet-container");
+      div.style.display = 'block';
+    });
+  }
 
   //function that makes an api call to search Twitter
   searchTwitter(){
@@ -45,6 +85,9 @@ class Twitter extends React.Component {
       method: 'GET',
     };
 
+    console.log("q: " + this.state.q);
+    console.log("url: " + `/tweets?${qs.stringify(params)}`);
+
     //make call to /tweets route to the proxy server with the params and options
     axios(options)
     .then(res => {
@@ -55,6 +98,8 @@ class Twitter extends React.Component {
         tweets,
         isLoading: false,
       });
+      var div = document.getElementById("tweet-container");
+      div.style.display = 'block';
     });
   }
 
@@ -77,18 +122,22 @@ class Twitter extends React.Component {
     return (
       <App>
         <header className="App-header">
+          {/* <p>
+            Welcome to the TwitterLens Tweet Analytics Page
+          </p> */}
             <Row>
-                <form className = "search-bar">
+                {/* <SearchBar className = "search-bar">
                   <input 
                     type="text" 
                     className="input-search" 
-                    name="q"
-                    value = {this.state.q}
+                    // name="q"
+                    // value = {this.state.q}
                     onChange={this.onChange}
+                    onClick={this.onSearch}
                   />
-                    <button className="search_button" onClick={this.onSearch}>Twitter Search</button>
-                </form>
-                <div className="tweet-container">
+                    {/* <button className="search_button" onClick={this.onSearch}>Twitter Search</button> /}
+                </SearchBar> */}
+                <div id="tweet-container" className="tweet-container">
                 {this.state.isLoading && <p>Loading...</p>}
                 {!this.state.isLoading &&
                 this.state.tweets.map((item, key) => (
@@ -116,82 +165,6 @@ class Twitter extends React.Component {
               </div>
             </Row>
         </header>
-        <style jsx global>{`
-          body {
-            font-family: sans-serif;
-          }
-          a {
-            color: #00A4EF;
-            text-decoration: none;
-          }
-          p {
-            margin: 0;
-          }
-        `}</style>
-        <style jsx>
-          {`
-            .content {
-              padding: 15px;
-            }
-            .search-bar {
-              height: 15vh;
-              border-radius: 10px;
-              box-shadow: 0 5px 20px 0 rgba(204, 204, 204, 0.5);
-              padding: 10px 15px;
-              margin: 10px 0;
-              word-break: break-all;
-            }
-            .category-item {
-              color: #00A4EF;
-              margin-right: 10px;
-              cursor: pointer;
-            }
-            .tweet-container {
-              height: 75vh;
-              font-size: 15px;
-              background: #fff;
-              padding: 0 15px;
-              overflow-y: scroll;
-              border-radius: 10px;
-              box-shadow: 0 5px 20px 0 rgba(204, 204, 204, 0.5);
-            }
-            .tweet-item {
-              color: #14171a;
-              border-bottom: 1px solid #e6ecf0;
-              word-break: break-all;
-              margin: 10px 0;
-              padding-bottom: 10px;
-            }
-            .profile-image {
-              height: 30px;
-              border-radius: 50%;
-              border: 1px solid #ccc;
-            }
-            .tweet-text {
-              margin: 5px 0;
-            }
-            .input-search {
-              width: 100%;
-              box-sizing: border-box;
-              border: 0;
-              border-bottom: 1px solid #d3dfef;
-              font-size: 14px;
-              letter-spacing: 0.3px;
-              padding: 14px 20px;
-            }
-            .btn {
-              width: 100%;
-              box-sizing: border-box;
-              border: 0;
-              border-bottom: 1px solid #d3dfef;
-              font-size: 14px;
-              letter-spacing: 0.3px;
-              padding: 14px 20px;
-              transition: all 0.2s linear;
-              box-shadow: 0 4px 16px 0 rgba(69, 91, 99, 0.08);
-            }
-          `}
-        </style>
       </App>
     );
   }
