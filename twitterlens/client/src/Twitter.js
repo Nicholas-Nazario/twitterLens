@@ -18,54 +18,23 @@ class Twitter extends React.Component {
     };
   }
 
-  //set initial state variables
-  state = {
-    q: '',
-    isLoading: false,
-    tweets: [],
-  };
-
-  searchTwitter2(keyword){
+  //function that takes in a keyword, updates this.state, and makes a call to this.search()
+  searchTwitter(keyword){
     this.state.q = keyword;
     this.setState({
       q: keyword,
-      isLoading: false,
+      isLoading: true,
       tweets: [],
     })
-    console.log(keyword);
-    console.log("this.state.q: " + this.state.q);
-    const q = keyword;
-    //setup the parameters for the api call
-    const params = {
-      q
-    }
 
-    //setup the options for the api call
-    const options = {
-      url: `/tweets?${qs.stringify(params)}`,
-      method: 'GET',
-    };
-
-    console.log("q: " + this.state.q);
-    console.log("url: " + `/tweets?${qs.stringify(params)}`);
-
-    //make call to /tweets route to the proxy server with the params and options
-    axios(options)
-    .then(res => {
-      //parse the tweets from the response data
-      const tweets = res.data.items;
-      //update the states of the variables tweets and isLoading
-      this.setState({
-        tweets,
-        isLoading: false,
-      });
-      var div = document.getElementById("tweet-container");
-      div.style.display = 'block';
-    });
+    this.search();
   }
 
   //function that makes an api call to search Twitter
-  searchTwitter(){
+  search(){
+    //hide the tweet-container until results are returned
+    var div = document.getElementById("tweet-container");
+    div.style.display = 'none';
     //set the state to reflect that the tweets are loading in
     this.setState({
       isLoading: true,
@@ -85,9 +54,6 @@ class Twitter extends React.Component {
       method: 'GET',
     };
 
-    console.log("q: " + this.state.q);
-    console.log("url: " + `/tweets?${qs.stringify(params)}`);
-
     //make call to /tweets route to the proxy server with the params and options
     axios(options)
     .then(res => {
@@ -98,7 +64,8 @@ class Twitter extends React.Component {
         tweets,
         isLoading: false,
       });
-      var div = document.getElementById("tweet-container");
+
+      //set the display of the tweet-container to 'block' to show the search results
       div.style.display = 'block';
     });
   }
@@ -107,7 +74,7 @@ class Twitter extends React.Component {
   onSearch = e => {
     e.preventDefault();
 
-    this.searchTwitter();
+    this.search();
   };
 
   //function that handles when the value of the input textfield changes
@@ -117,57 +84,46 @@ class Twitter extends React.Component {
     });
   }
 
-  //return a rendering of the html and css code below
+  //return a rendering of the html and javascript code below
   render() {
     return (
       <App>
         <header className="App-header">
-          {/* <p>
-            Welcome to the TwitterLens Tweet Analytics Page
-          </p> */}
-            <Row>
-                {/* <SearchBar className = "search-bar">
-                  <input 
-                    type="text" 
-                    className="input-search" 
-                    // name="q"
-                    // value = {this.state.q}
-                    onChange={this.onChange}
-                    onClick={this.onSearch}
-                  />
-                    {/* <button className="search_button" onClick={this.onSearch}>Twitter Search</button> /}
-                </SearchBar> */}
-                <div id="tweet-container" className="tweet-container">
-                {this.state.isLoading && <p>Loading...</p>}
-                {!this.state.isLoading &&
-                this.state.tweets.map((item, key) => (
-                  <div key={key} className="tweet-item">
-                    
-                      <Col xs={{ right: 10 }}>
-                        <img
-                          className="profile-image"
-                          src={item.user.profile_image_url_https}
-                          alt="Profile"
-                        />
-                      </Col>
-                      <Col>
-                        <p><a href={`https://twitter.com/${item.user.screen_name}`} target="_blank" rel="noreferrer noopener">{item.user.name}</a></p>
-                      </Col>
-                    
-                    <p className="tweet-text">{item.text}</p>
-                    
-                      <Col>
-                        <a href={`https://twitter.com/${item.user.screen_name}/statuses/${item.id_str}`} target="_blank" rel="noreferrer noopener">More...</a>
-                      </Col>
-                    
-                  </div>
-                ))}
+          <Row>
+            <div id="tweet-container" className="tweet-container">
+            {/* if the API return call is loading, display a loading message */}
+            {this.state.isLoading && <p>Loading...</p>}
+            {/* tweets are loaded in, display the search results */}
+            {!this.state.isLoading &&
+            this.state.tweets.map((item, key) => (
+              /* code below handles the rendering of each tweet item */
+              <div key={key} className="tweet-item">
+                  {/* render the user's picture */}
+                  <Col xs={{ right: 10 }}>
+                    <img
+                      className="profile-image"
+                      src={item.user.profile_image_url_https}
+                      alt="Profile"
+                    />
+                  </Col>
+                  {/* render a link to the user's twitter page */}
+                  <Col>
+                    <p><a href={`https://twitter.com/${item.user.screen_name}`} target="_blank" rel="noreferrer noopener">{item.user.name}</a></p>
+                  </Col>
+                <p className="tweet-text">{item.text}</p>
+                  {/* render a link to the user's tweet */}
+                  <Col>
+                    <a href={`https://twitter.com/${item.user.screen_name}/statuses/${item.id_str}`} target="_blank" rel="noreferrer noopener">More...</a>
+                  </Col>     
               </div>
-            </Row>
+            ))}
+            </div>
+          </Row>
         </header>
       </App>
     );
   }
+
 }
 
 Twitter.propTypes = {};

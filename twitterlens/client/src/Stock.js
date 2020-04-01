@@ -20,12 +20,6 @@ class Stock extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // componentDidMount() {
-  //   // pass the requested ref here
-  //   this.props.searchStocks = this.searchStocks;
-
-  // } 
-
   // Set the state of value to the event variable e
   // When the user types, it is considered an event and
   //    is sets the value to the text typed
@@ -35,6 +29,7 @@ class Stock extends Component {
     });
   }
 
+  // Searches the Stock API for a given keyword
   // It creates the proper url to call to the AlphaVantage API site
   // It then uses axios.get() to reach out with the url and return data 
   //    If the data does not successfully return an error will be caught in console
@@ -73,14 +68,9 @@ class Stock extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <p>
-            Welcome to the TwitterLens Stock Analytics Page
-          </p> */}
             <Row>
               {/*
-                Render the SearchBar component
-                handleChange - set the state of value to the user input
-                handleClick - make the Stock API call once the user clicks
+                Render the table for the stocks data here
               */}
               
             </Row>
