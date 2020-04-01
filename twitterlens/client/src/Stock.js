@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {Row} from 'react-bootstrap';
 import axios from 'axios';
 import SearchBar from './components/Search.js';
+import StockTable from './components/StockTable.js'
 import _ from 'lodash';
 
 // This class creates the Stock part of a Page
@@ -90,31 +91,13 @@ class Stock extends Component {
             </Row>
             <Row>
               <div className = "stock_display">
+                {!this.state.dataRet &&
+                  <p>Data</p>
+                }
                 {this.state.dataRet &&
-                  <div>
-                    <table class="table table-striped"> 
-                      <thead>
-                        <tr>
-                          <th scope="col">Open ($)</th>
-                          <th scope="col">High ($)</th>
-                          <th scope="col">Low ($)</th>
-                          <th scope="col">Close ($)</th>
-                          <th scope="col">Volume (Shares)</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">{stocks["1. open"]}</th>
-                          <td>{stocks["2. high"]}</td>
-                          <td>{stocks["3. low"]}</td>
-                          <td>{stocks["4. close"]}</td>
-                          <td>{stocks["5. volume"]}</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                      </tfoot>
-                    </table>
-                  </div>
+                  <StockTable
+                    stocks={stocks}
+                  />
                 }
               </div>
             </Row>
