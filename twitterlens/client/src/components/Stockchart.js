@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Chart} from "react-google-charts";
-import './Stockchart.css';
 
 class Stockchart extends Component {
     render() {

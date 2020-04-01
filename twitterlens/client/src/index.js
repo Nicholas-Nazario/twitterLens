@@ -10,6 +10,7 @@ import * as serviceWorker from './serviceWorker';
 // JavaScript Component Imports
 import App from './App';
 import Stock from './Stock';
+import Stockchart from './components/Stockchart.js';
 import Twitter from './Twitter';
 import Navbar from './components/Navbar';
 import NotFound from './NotFound';
@@ -28,10 +29,11 @@ const routing = (
       {/* Create Routing Table as described above */}
       <Switch>
         <Route exact path="/" component={Twitter} />
+        <Route path="/home" component={App} />
         <Route path="/stock" component={Stock} />
         <Route path="/about" component={About} />
         <Route path="/Team" component={Team} />
-        {/*NOTE: This is set to NotFound until we decide if we want sepereate pages or a merged data page */}
+        {/*NOTE: This is set to NotFound until we decide if we want separate pages or a merged data page */}
         <Route path="/twitter" component={Twitter} />
         {/* NOTE: This is were all unassigned extensions redirect */}
         <Route component={NotFound} />
