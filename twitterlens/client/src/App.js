@@ -58,6 +58,7 @@ class App extends React.Component {
             {/* create a SearchBar and override the props to allow the SearchBar to use the values and methods we pass in */}
             <SearchBar 
                     defaultValue={this.state.value}
+                    value={this.state.value}
                     onChange={this.handleChange}
                     onClick={this.handleClick}/>
           </Row>

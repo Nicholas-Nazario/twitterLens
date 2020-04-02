@@ -23,7 +23,7 @@ class Twitter extends React.Component {
       q: keyword,
       isLoading: true,
       tweets: [],
-    })
+    });
 
     this.search();
   }
