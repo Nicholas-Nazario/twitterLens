@@ -11,18 +11,19 @@ class Stockchart extends Component {
                 risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
             },
             title: "Stock Price",
-            hAxis: { title: "Price" },
-            vAxis: { title: "Day" },
+            hAxis: { title: "Day" },
+            vAxis: { title: "Price" },
             legend: "none"
         };
-        const data = [
-            ["Day", "", "", "", ""],
-            ["Mon", 20, 28, 38, 45],
-            ["Tue", 31, 38, 55, 66],
-            ["Wed", 50, 55, 77, 80],
-            ["Thu", 77, 77, 66, 50],
-            ["Fri", 68, 66, 22, 15]
-        ];
+        
+        // const data = [
+        //     ["Day", "", "", "", ""],
+        //     ["Mon", 20, 28, 38, 45],
+        //     ["Tue", 31, 38, 55, 66],
+        //     ["Wed", 50, 55, 77, 80],
+        //     ["Thu", 77, 77, 66, 50],
+        //     ["Fri", 68, 66, 22, 15]
+        // ];
 
         return (
             <div className="Stockchart">
@@ -33,7 +34,7 @@ class Stockchart extends Component {
                             chartType="CandlestickChart"
                             width="800px"
                             height="500px"
-                            data={data}
+                            data={this.props.data}
                             options={options}
                         /> 
                     </a>
