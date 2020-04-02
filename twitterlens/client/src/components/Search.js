@@ -21,24 +21,24 @@ function SearchBar(props) {
         //This allows a specific component (ex. Stock.js) render it within the page
     
     return (
-            <div className="search_bar">
-                <Form size='normal' className = "search_bar_form">
-                    {/* 
-                        value = text (type String) that is input by the user
-                            - This is returned as an event in your specified onChange function
-                        onChange = specified function that will change the state of a variable in 
-                            a component to be the value from above
-                        onClick = specified function that will do an action after the button is clicked
-                     */}
-                    <Form.Group inline>
-                        <input type="text" className="search_input" 
-                            placeholder='Enter a stock ticker'
-                            value={props.value}
-                            onChange={props.onChange}/>
-                        <Button className="search_button" onClick={props.onClick}>Search</Button>
-                    </Form.Group>
-                </Form>
-            </div> 
+        <div className="search_bar">
+            <Form size='normal' className = "search_bar_form">
+                {/* 
+                    value = text (type String) that is input by the user
+                        - This is returned as an event in your specified onChange function
+                    onChange = specified function that will change the state of a variable in 
+                        a component to be the value from above
+                    onClick = specified function that will do an action after the button is clicked
+                    */}
+                <Form.Group inline>
+                    <input type="text" className="search_input" 
+                        placeholder='Enter a stock ticker'
+                        value={props.value}
+                        onChange={props.onChange}/>
+                    <Button className="search_button" onClick={props.onClick}>Search</Button>
+                </Form.Group>
+            </Form>
+        </div> 
     );
 }
 export default SearchBar;

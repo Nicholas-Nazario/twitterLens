@@ -142,8 +142,7 @@ createMapOfStocks(d, s) {
     let stock_map = this.state.stock_map;
     const value = this.state.value;
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className="Stock">
             <Row>
               {/*
                 Render the table for the stocks data here
@@ -151,7 +150,7 @@ createMapOfStocks(d, s) {
               
             </Row>
             <Row>
-              <div className = "st">
+              <div className = "stock-chart">
                 {!this.state.dataRet &&
                   <p></p>
                 }
@@ -174,8 +173,6 @@ createMapOfStocks(d, s) {
                 }
               </div>
             </Row>
-            
-        </header>
       </div>
     );
   }

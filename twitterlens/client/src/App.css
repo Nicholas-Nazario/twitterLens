@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #2f3238;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -15,7 +17,6 @@
 
 .App-header {
   background-color: #2f3238;
-  min-height: 42.34vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,18 +29,18 @@
   color: #61dafb;
 }
 
-.Stockchart {
+.stock-chart {
   text-align: center;
+  min-height: 60vh;
 }
 
-.Stock-header {
-  background-color: #282c34;
-  min-height: 50vh;
+.Stock {
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: normal;
-  /* font-size: calc(10px + 2vmin); */
+  font-size: calc(1px + 2vmin);
   color: white;
 } 
 
