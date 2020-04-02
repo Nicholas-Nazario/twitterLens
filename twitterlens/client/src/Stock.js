@@ -90,18 +90,12 @@ createMapOfStocks(d, s) {
     });
   }
 
-  // handleClick is the function in charge of functionality after the button click
+  // Searches the Stock API for a given keyword
   // It creates the proper url to call to the AlphaVantage API site
   // It then uses axios.get() to reach out with the url and return data 
   //    If the data does not successfully return an error will be caught in console
-  handleClick(e) {
-    if (e) e.preventDefault();
-    this.setState ({
-      value: '',
-      term: this.state.value
-    });
-
-    let term = (this.state.value).toString();
+  searchStocks(keyword){
+    let term = keyword;
     const api_key = `${process.env.REACT_APP_STOCK_API_KEY}`;
     const stock_api = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${term}&apikey=${api_key}`;
     console.log(term);
@@ -129,6 +123,18 @@ createMapOfStocks(d, s) {
     .catch(error => console.log(error))
   }
 
+  // handleClick is the function in charge of functionality after the button click
+  handleClick(e) {
+    if (e) e.preventDefault();
+    this.setState ({
+      value: '',
+      term: this.state.value
+    });
+
+    this.searchStocks(this.state.value.toString())
+    
+  }
+
   // Render the below HTML code and export as Stock
   // This lets the index.js read the HTML as a single object
   render() {
@@ -138,19 +144,11 @@ createMapOfStocks(d, s) {
     return (
       <div className="App">
         <header className="App-header">
-          <p>
-            Welcome to the TwitterLens Stock Analytics Page
-          </p>
             <Row>
               {/*
-                Render the SearchBar component
-                handleChange - set the state of value to the user input
-                handleClick - make the Stock API call once the user clicks
+                Render the table for the stocks data here
               */}
-              <SearchBar 
-                defaultValue={this.state.value}
-                onChange={this.handleChange}
-                onClick={this.handleClick}/>
+              
             </Row>
             <Row>
               <div className = "st">

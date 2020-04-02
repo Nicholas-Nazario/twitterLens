@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #2f3238;
-  min-height: 10vh;
+  min-height: 42.34vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +41,7 @@
   justify-content: normal;
   /* font-size: calc(10px + 2vmin); */
   color: white;
-}
+} 
 
 .Twitter {
   font-size: calc(8px + 2vmin);

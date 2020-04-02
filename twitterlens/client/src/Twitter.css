@@ -15,9 +15,11 @@
     cursor: pointer;
 }
 .tweet-container {
-    height: 75vh;
+    display: none;
+    height: 25vh;
+    width: 100%;
     background: #fff;
-    padding: 0 15px;
+    padding: 0 0px;
     overflow-y: scroll;
     border-radius: 10px;
     box-shadow: 0 5px 20px 0 rgba(204, 204, 204, 0.5);
@@ -36,6 +38,7 @@
 }
 .tweet-text {
     margin: 5px 0;
+    font-size: 14px;
 }
 .input-search {
     width: 100%;
