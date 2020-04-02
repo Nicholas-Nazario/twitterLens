@@ -17,20 +17,22 @@ class StockTable extends Component{
                             <table class="table table-bordered"> 
                                 <thead>
                                 <tr>
+                                    <th scope="col">Date</th>
                                     <th scope="col">Open ($)</th>
                                     <th scope="col">High ($)</th>
                                     <th scope="col">Low ($)</th>
                                     <th scope="col">Close ($)</th>
-                                    <th scope="col">Volume (Shares)</th>
+                                    <th scope="col">Volume (shares)</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th scope="row">{this.props.stocks["1. open"]}</th>
-                                    <td>{this.props.stocks["2. high"]}</td>
-                                    <td>{this.props.stocks["3. low"]}</td>
-                                    <td>{this.props.stocks["4. close"]}</td>
-                                    <td>{this.props.stocks["5. volume"]}</td>
+                                    <th scope="row">{this.props.stocks[0]}</th>
+                                    <td>{this.props.stocks[1][0]}</td>
+                                    <td>{this.props.stocks[1][1]}</td>
+                                    <td>{this.props.stocks[1][2]}</td>
+                                    <td>{this.props.stocks[1][3]}</td>
+                                    <td>{this.props.stocks[1][4]}</td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
