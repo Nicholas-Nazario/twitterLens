@@ -153,7 +153,7 @@ createMapOfStocks(d, s) {
             <Row>
               <div className = "st">
                 {!this.state.dataRet &&
-                  <p>Data</p>
+                  <p></p>
                 }
                 {this.state.dataRet &&
                   <Stockchart
@@ -165,7 +165,7 @@ createMapOfStocks(d, s) {
             <Row>
               <div className = "stock_display">
                 {!this.state.dataRet &&
-                  <p>Data</p>
+                  <p></p>
                 }
                 {this.state.dataRet &&
                   <StockTable
