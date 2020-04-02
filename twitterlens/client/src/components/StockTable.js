@@ -14,7 +14,7 @@ class StockTable extends Component{
                 <div className="StockTable">
                     <header className="StockTable-header">
                         <div>
-                            <table class="table table-bordered"> 
+                            <table className="table table-bordered"> 
                                 <thead>
                                 <tr>
                                     <th scope="col">Date</th>

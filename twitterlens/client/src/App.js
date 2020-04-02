@@ -1,16 +1,10 @@
 import './App.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import Stock from './Stock';
 import SearchBar from './components/Search'
 import {Row} from 'react-bootstrap';
-import axios from 'axios';
 import Twitter from './Twitter';
-import Navbar from './components/Navbar';
-import Stockchart from './components/Stockchart';
-import * as serviceWorker from './serviceWorker';
-import { Container, Header, List } from "semantic-ui-react";
 
 class App extends React.Component {
   constructor(props) {

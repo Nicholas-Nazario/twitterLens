@@ -4,7 +4,6 @@ import App from './components/App'
 import axios from 'axios';
 import qs from 'query-string'
 import './Twitter.css'
-import SearchBar from './components/Search.js';
 
 class Twitter extends React.Component {
   //constructor for Twitter

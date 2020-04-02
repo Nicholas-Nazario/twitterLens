@@ -1,7 +1,7 @@
 // React Imports
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 // Site Requirements
 import './index.css';
@@ -9,9 +9,6 @@ import * as serviceWorker from './serviceWorker';
 
 // JavaScript Component Imports
 import App from './App';
-import Stock from './Stock';
-import Stockchart from './components/Stockchart.js';
-import Twitter from './Twitter';
 import Navbar from './components/Navbar';
 import NotFound from './NotFound';
 import About from './About';
@@ -32,9 +29,6 @@ const routing = (
         <Route path="/home" component={App} />
         <Route path="/about" component={About} />
         <Route path="/Team" component={Team} />
-        {/*NOTE: These are commented out since we don't need individual Stock and Twitter pages yet */}
-        {/* <Route path="/twitter" component={Twitter} /> 
-        <Route path="/stock" component={Stock} /> */}
         {/* NOTE: This is were all unassigned extensions redirect */}
         <Route component={NotFound} />
       </Switch>

@@ -2,9 +2,7 @@
 import React, {Component} from 'react';
 import {Row} from 'react-bootstrap';
 import axios from 'axios';
-import SearchBar from './components/Search.js';
 import StockTable from './components/StockTable.js';
-import _ from 'lodash';
 import Stockchart from './components/Stockchart.js';
 //import Moment from 'react-moment';
 
@@ -33,7 +31,7 @@ class Stock extends Component {
   // Return an array of the dates in String format
   createThirtyDays(e) {
     let dates = [];
-    for (const [key, val] of Object.entries(e)) {
+    for (const [key,] of Object.entries(e)) {
       dates.push(key);
     }
     let sortedDates = dates.sort((a,b) => a.valueOf() - b.valueOf());
@@ -103,16 +101,11 @@ createMapOfStocks(d, s) {
   
     axios.get(stock_api)
     .then(res => {
-      let stocks = res.data['Time Series (Daily)']['2020-03-31'];
-      let stonk = res.data['Time Series (Daily)'];
+      let stocks = res.data['Time Series (Daily)'];
       console.log(stocks);
-      console.log(stonk);
-      let dates = this.createThirtyDays(stonk);
-      let thirtyStocksMap = this.createMapOfStocks(dates, stonk);
-      let thirtyStocksArr = (this.createArrOfStocks(dates, stonk)).reverse();
-      console.log(thirtyStocksMap);
-      console.log(thirtyStocksArr);
-      console.log(Array.from(thirtyStocksMap)[0]);
+      let dates = this.createThirtyDays(stocks);
+      let thirtyStocksMap = this.createMapOfStocks(dates, stocks);
+      let thirtyStocksArr = (this.createArrOfStocks(dates, stocks)).reverse();
       this.setState({
         stocks:thirtyStocksArr,
         stock_map:thirtyStocksMap,
@@ -140,7 +133,6 @@ createMapOfStocks(d, s) {
   render() {
     let stocks = this.state.stocks;
     let stock_map = this.state.stock_map;
-    const value = this.state.value;
     return (
       <div className="App">
         <header className="App-header">
@@ -152,9 +144,6 @@ createMapOfStocks(d, s) {
             </Row>
             <Row>
               <div className = "st">
-                {!this.state.dataRet &&
-                  <p>Data</p>
-                }
                 {this.state.dataRet &&
                   <Stockchart
                     data={stocks}
@@ -164,9 +153,6 @@ createMapOfStocks(d, s) {
             </Row>             
             <Row>
               <div className = "stock_display">
-                {!this.state.dataRet &&
-                  <p>Data</p>
-                }
                 {this.state.dataRet &&
                   <StockTable
                     stocks={Array.from(stock_map)[0]}
