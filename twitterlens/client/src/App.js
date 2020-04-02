@@ -41,9 +41,17 @@ class App extends React.Component {
       term: this.state.value
     });
     
-    //call the search functions of each child to search for the value in each API
-    this.child.current.searchStocks(this.state.value)
-    this.child2.current.searchTwitter(this.state.value)
+    //check to make sure search query is not undefined or blank
+    if (this.state.value != undefined && this.state.value != ''){
+      //call the search functions of each child to search for the value in each API
+      this.child.current.searchStocks(this.state.value);
+      this.child2.current.searchTwitter(this.state.value);
+    } 
+    //handle error with the search term
+    else {
+      //display a helpful error message that tells the user how to input valid input
+      alert("Error: search term cannot be empty. Please input a stock ticker (ex. MSFT)");
+    }
   }
 
   //return a rendering of the html and javascript code below

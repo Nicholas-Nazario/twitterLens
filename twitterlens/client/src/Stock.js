@@ -136,12 +136,9 @@ createMapOfStocks(d, s) {
     return (
       <div className="App">
         <header className="App-header">
-            <Row>
-              {/*
-                Render the table for the stocks data here
+            {/*
+                Render the chart for the stocks data here
               */}
-              
-            </Row>
             <Row>
               <div className = "st">
                 {this.state.dataRet &&
@@ -150,7 +147,10 @@ createMapOfStocks(d, s) {
                   />
                 }
               </div>
-            </Row>             
+            </Row>   
+            {/*
+                Render the table for the stocks data here
+              */}          
             <Row>
               <div className = "stock_display">
                 {this.state.dataRet &&
@@ -160,7 +160,6 @@ createMapOfStocks(d, s) {
                 }
               </div>
             </Row>
-            
         </header>
       </div>
     );
