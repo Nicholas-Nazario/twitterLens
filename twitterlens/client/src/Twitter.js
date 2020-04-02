@@ -1,6 +1,5 @@
 import React from 'react';
 import {Row, Col} from 'react-bootstrap';
-import App from './components/App'
 import axios from 'axios';
 import qs from 'query-string'
 import './Twitter.css'
@@ -86,7 +85,6 @@ class Twitter extends React.Component {
   //return a rendering of the html and javascript code below
   render() {
     return (
-      <App>
         <header className="App-header">
           <Row>
             <div id="tweet-container" className="tweet-container">
@@ -119,10 +117,8 @@ class Twitter extends React.Component {
             </div>
           </Row>
         </header>
-      </App>
     );
   }
-
 }
 
 Twitter.propTypes = {};
