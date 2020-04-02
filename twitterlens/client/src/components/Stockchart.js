@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import DataChart from './DataChart.js';
 import {Chart} from "react-google-charts";
 
-class Stockchart extends Component {
-    render() {
-        const options = {
+
+class Stockchart extends DataChart {
+    constructor(props){
+        super(props);
+        const optionsConst = {
             legend: 'none',
             bar: { groupWidth: '100%' }, // Remove space between bars.
             candlestick: {
@@ -14,8 +17,8 @@ class Stockchart extends Component {
             hAxis: { title: "Day" },
             vAxis: { title: "Price" }
         };
-
-        return (
+        
+        const chartHTML = (
             <div className="Stockchart">
                 <header className="Stock-header">
                     <span>
@@ -25,13 +28,21 @@ class Stockchart extends Component {
                             width="800px"
                             height="500px"
                             data={this.props.data}
-                            options={options}
+                            options={this.optionsConst}
                         /> 
                     </a>
                     </span>
                 </header>
             </div>
-        )
+        );
+        this.setChart(this.chartHTML);
+    }
+
+    
+
+    render() {
+        
+        return (this.getChart()) 
     }
 }
 
