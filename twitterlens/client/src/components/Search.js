@@ -2,7 +2,7 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react'
 import _ from 'lodash'
-import { Button } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 
 const getOptions = (number, prefix = 'Choice ') => _.times(number, (index) => ({
     key: index,
@@ -22,7 +22,7 @@ function SearchBar(props) {
     
     return (
             <div className="search_bar">
-                <form className = "search_bar_form">
+                <Form size='normal' className = "search_bar_form">
                     {/* 
                         value = text (type String) that is input by the user
                             - This is returned as an event in your specified onChange function
@@ -30,11 +30,14 @@ function SearchBar(props) {
                             a component to be the value from above
                         onClick = specified function that will do an action after the button is clicked
                      */}
-                    <input type="text" className="search_input"
-                        value={props.value}
-                        onChange={props.onChange}/>
-                    <button className="search_button" onClick={props.onClick}>Stock Search</button>
-                </form>
+                    <Form.Group inline>
+                        <input type="text" className="search_input" 
+                            placeholder='Enter a stock ticker'
+                            value={props.value}
+                            onChange={props.onChange}/>
+                        <Button className="search_button" onClick={props.onClick}>Search</Button>
+                    </Form.Group>
+                </Form>
             </div> 
     );
 }

@@ -57,9 +57,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>
-            Welcome to TwitterLens
-          </p>
+          <p> Welcome to TwitterLens </p>
           <Row>
             {/* create a SearchBar and override the props to allow the SearchBar to use the values and methods we pass in */}
             <SearchBar 
