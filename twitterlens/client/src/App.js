@@ -33,6 +33,10 @@ class App extends React.Component {
 
   //handles the event where the user hits the submit button
   handleClick(e){
+    this.setState({
+      value: e.target.value
+    });
+
     e.preventDefault();
 
     //update the state of value and term before calling the search functions
@@ -65,7 +69,7 @@ class App extends React.Component {
           <Row>
             {/* create a SearchBar and override the props to allow the SearchBar to use the values and methods we pass in */}
             <SearchBar 
-                    defaultValue={this.state.value}
+                    // defaultValue={this.state.value}
                     value={this.state.value}
                     onChange={this.handleChange}
                     onClick={this.handleClick}/>
