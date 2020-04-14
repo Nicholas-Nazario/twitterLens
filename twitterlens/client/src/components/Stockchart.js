@@ -21,7 +21,7 @@ class Stockchart extends Component {
                 title: "Price"
             },
             textColor: '##FFFFFF',
-            backgroundColor: '#2f3238',
+            backgroundColor: { fill:'transparent' },
             'chartArea': {
                 'backgroundColor': {
                     'fill': '#2f3238',

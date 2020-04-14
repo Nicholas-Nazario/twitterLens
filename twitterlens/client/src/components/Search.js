@@ -19,8 +19,8 @@ export default class SearchBar extends React.Component {
     //This allows a specific component (ex. Stock.js) render it within the page
     render() {
         return (
-            <div className="search_bar">
-                <Dropdown className="search_input"
+            <div className="search-bar">
+                <Dropdown className="search-input"
                     placeholder='Select a Company'
                     search
                     selection
