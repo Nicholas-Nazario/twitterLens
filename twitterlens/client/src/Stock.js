@@ -134,33 +134,27 @@ createMapOfStocks(d, s) {
     let stocks = this.state.stocks;
     let stock_map = this.state.stock_map;
     return (
-      <div className="App">
-        <header className="App-header">
-            {/*
-                Render the chart for the stocks data here
-              */}
-            <Row>
-              <div className = "st">
-                {this.state.dataRet &&
-                  <Stockchart
-                    data={stocks}
-                  />
-                }
-              </div>
-            </Row>   
-            {/*
-                Render the table for the stocks data here
-              */}          
-            <Row>
-              <div className = "stock_display">
-                {this.state.dataRet &&
-                  <StockTable
-                    stocks={Array.from(stock_map)[0]}
-                  />
-                }
-              </div>
-            </Row>
-        </header>
+      <div className="Stock">
+        {/* Render the table for the stocks data here */}
+        <Row>
+          <div className = "stock-chart">
+            {this.state.dataRet &&
+              <Stockchart
+                data={stocks}
+              />
+            }
+          </div>
+        </Row>   
+        {/* Render the table for the stocks data here */}          
+        <Row>
+          <div className = "stock_display">
+            {this.state.dataRet &&
+              <StockTable
+                stocks={Array.from(stock_map)[0]}
+              />
+            }
+          </div>
+        </Row>
       </div>
     );
   }
