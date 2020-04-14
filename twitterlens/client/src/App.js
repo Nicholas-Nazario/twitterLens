@@ -24,28 +24,32 @@ class App extends React.Component {
   }
 
   //handles the event where the value of the search bar is changed
-  handleChange(e) {
+  handleChange(e, data) {
     //change the value of value when the search bar value is changed
     this.setState({
-      value: e.target.value
+      value: data.value
     });
   }
 
   //handles the event where the user hits the submit button
-  handleClick(e){
+  handleClick(e, data){
+    this.setState({
+      value: data.value
+    });
+
     e.preventDefault();
 
-    //update the state of value and term before calling the search functions
-    this.setState ({
-      value: '',
-      term: this.state.value
-    });
+    // //update the state of value and term before calling the search functions
+    // this.setState ({
+    //   value: '',
+    //   term: this.state.value
+    // });
     
     //check to make sure search query is not undefined or blank
-    if (this.state.value != undefined && this.state.value != ''){
+    if (data.value != undefined && data.value != ''){
       //call the search functions of each child to search for the value in each API
-      this.child.current.searchStocks(this.state.value);
-      this.child2.current.searchTwitter(this.state.value);
+      this.child.current.searchStocks(data.value);
+      this.child2.current.searchTwitter(data.value);
     } 
     //handle error with the search term
     else {
@@ -59,13 +63,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>
-            Welcome to TwitterLens
-          </p>
+          <a> Welcome to TwitterLens </a>
           <Row>
             {/* create a SearchBar and override the props to allow the SearchBar to use the values and methods we pass in */}
             <SearchBar 
-                    defaultValue={this.state.value}
+                    // defaultValue={this.state.value}
                     value={this.state.value}
                     onChange={this.handleChange}
                     onClick={this.handleClick}/>
