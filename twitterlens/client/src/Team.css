@@ -38,24 +38,24 @@ body {
                   }
           
   .profile-info h2 {
-      color: #E8E8E8;
+      color: rgb(18, 161, 228);
       letter-spacing: 4px;
-        padding-bottom: 12px;
-                  }
-                  
+     padding-bottom: 12px;
+    }
+                
   .profile-info span {
       display: block;
       font-size: 12px;
-      color: #4CB493;
+      color: #E8E8E8;
       letter-spacing: 2px;
               }
-  
+
   .profile-info a {
-       color: #4CB493;
-          }
+    color: rgb(18, 161, 228);
+  }
   .profile-info i {
-          padding: 15px 35px 0px 35px;
-          }
+      padding: 15px 35px 0px 35px;
+  }
           
   
   .profile-card:hover .profile-pic {
