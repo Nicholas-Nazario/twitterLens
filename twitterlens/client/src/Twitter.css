@@ -17,14 +17,27 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.445);
 }
-.tweet-item {
-    color: #FFF;
+.tweet-item, .positive-tweet-item, .neutral-tweet-item, .negative-tweet-item {
+    color: #000;
+    /* background: #2f3238; */
     border-bottom: 1px solid rgba(255, 255, 255, 0.445);
     word-break: break-all;
     margin: 10px 0;
     font-size: 16px;
     padding-bottom: 10px;
     max-width: 90vh;
+}
+.tweet-item {
+    color: #FFF;
+}
+.positive-tweet-item {
+    background: #78f08e;
+}
+.neutral-tweet-item {
+    background: #ebe159;
+}
+.negative-tweet-item {
+    background-color: #d93434;
 }
 .profile-image {
     height: 30px;

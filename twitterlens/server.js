@@ -101,8 +101,7 @@ app.get("/tweets", (req, res)=> {
       //send response to the client with data as a JSON
       res.json({
         error: false,
-        items: data.statuses,
-        sentiment: twitterData,
+        items: twitterData,
         "metrics": metrics
       });
     }

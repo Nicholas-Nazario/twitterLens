@@ -103,7 +103,7 @@ class Twitter extends React.Component {
             {!this.state.isLoading &&
             this.state.tweets.map((item, key) => (
               /* code below handles the rendering of each tweet item */
-              <div key={key} className="tweet-item">
+              <div key={key} className={item.sentiment + "-tweet-item"}>
                   {/* render the user's picture */}
                   <Col xs={{ right: 10 }}>
                     <img
