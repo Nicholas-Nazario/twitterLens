@@ -13,6 +13,7 @@ class Twitter extends React.Component {
       q: '',
       isLoading: false,
       tweets: [],
+      metrics: {}
     };
   }
 
@@ -23,6 +24,7 @@ class Twitter extends React.Component {
       q: keyword,
       isLoading: true,
       tweets: [],
+      metrics: {}
     });
 
     this.search();
@@ -31,8 +33,9 @@ class Twitter extends React.Component {
   //function that makes an api call to search Twitter
   search(){
     //hide the tweet-container until results are returned
-    var div = document.getElementById("tweet-container");
-    div.style.display = 'none';
+    let tweetContainer = document.getElementById("tweet-container");
+    let sentimentTable = document.getElementById("sentiment-table");
+    tweetContainer.style.display = 'none';
     //set the state to reflect that the tweets are loading in
     this.setState({
       isLoading: true,
@@ -55,16 +58,19 @@ class Twitter extends React.Component {
     //make call to /tweets route to the proxy server with the params and options
     axios(options)
     .then(res => {
-      //parse the tweets from the response data
+      //parse the tweets and metrics data from the response data
       const tweets = res.data.items;
-      //update the states of the variables tweets and isLoading
+      const metrics = res.data.metrics;
+      console.log(metrics); 
+      //update the states of the variables tweets, isLoading, and metrics
       this.setState({
         tweets,
         isLoading: false,
+        metrics
       });
 
       //set the display of the tweet-container to 'block' to show the search results
-      div.style.display = 'block';
+      tweetContainer.style.display = 'block';
     });
   }
 
@@ -115,6 +121,41 @@ class Twitter extends React.Component {
               </div>
             ))}
             </div>
+          </Row>
+          <Row>
+          {/* // Navabar component and formatting is following the template from BootStrap 4.4.x */}
+          {!this.state.isLoading &&
+            <div id="sentiment-table" className="sentiment-table">
+              <header className="Table-header">
+                <div>
+                  <table className="table table-bordered"> 
+                    <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Open ($)</th>
+                      <th scope="col">High ($)</th>
+                      <th scope="col">Low ($)</th>
+                      <th scope="col">Close ($)</th>
+                      <th scope="col">Volume (shares)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <th scope="row">{this.props.stocks[0]}</th>
+                      <td>{this.props.stocks[1][0]}</td>
+                      <td>{this.props.stocks[1][1]}</td>
+                      <td>{this.props.stocks[1][2]}</td>
+                      <td>{this.props.stocks[1][3]}</td>
+                      <td>{this.props.stocks[1][4]}</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                  </table>
+                </div>
+              </header>
+            </div>
+          }
           </Row>
         </header>
     );
