@@ -39,11 +39,21 @@
 .negative-tweet-item {
     color: #d93434;
 }
-.profile-image {
+.profile-image, .positive-profile-image, .neutral-profile-image, .negative-profile-image {
     height: 30px;
     border-radius: 50%;
-    border: 1px solid #cccccc;
-    /*change 1px -> 2px and #cccccc -> 3 classes of color */
+}
+.profile-image {
+    border: 2px solid #cccccc;
+}
+.positive-profile-image {
+    border: 2px solid #78f08e;
+}
+.neutral-profile-image {
+    border: 2px solid #ebe159;
+}
+.negative-profile-image {
+    border: 2px solid #d93434; 
 }
 .tweet-text {
     margin: 5px 0;

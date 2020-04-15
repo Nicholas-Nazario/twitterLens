@@ -107,7 +107,7 @@ class Twitter extends React.Component {
                   {/* render the user's picture */}
                   <Col xs={{ right: 10 }}>
                     <img
-                      className="profile-image"
+                      className={item.sentiment + "-profile-image"}
                       src={item.user.profile_image_url_https}
                       alt="Profile"
                     />
