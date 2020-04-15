@@ -1,8 +1,10 @@
 import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import axios from 'axios';
-import qs from 'query-string'
-import './Twitter.css'
+import qs from 'query-string';
+import './Twitter.css';
+import GenericChart from './components/GenericChart';
+
 
 class Twitter extends React.Component {
   //constructor for Twitter
@@ -34,9 +36,9 @@ class Twitter extends React.Component {
   search(){
     //hide the tweet-container until results are returned
     let tweetContainer = document.getElementById("tweet-container");
-    let sentimentTable = document.getElementById("sentiment-table");
+    let tweetSentiment = document.getElementById("tweet-sentiment");
     tweetContainer.style.display = 'none';
-    sentimentTable.style.display = 'none';
+    tweetSentiment.style.display = 'none';
 
     //set the state to reflect that the tweets are loading in
     this.setState({
@@ -73,7 +75,7 @@ class Twitter extends React.Component {
 
       //set the display of the tweet-container and sentiment-table to 'block' to show the search results
       tweetContainer.style.display = 'block';
-      sentimentTable.style.display = 'block';
+      tweetSentiment.style.display = 'block';
     });
   }
 
@@ -93,8 +95,61 @@ class Twitter extends React.Component {
 
   //return a rendering of the html and javascript code below
   render() {
+    {/* 
+      Select options for the tweet sentiment pie chart
+      Allows for font color, slive color and 3D styling
+    */}
+    let options={
+      title:"Tweet Sentiment",
+      backgroundColor: '#2f3238',
+      is3D: true,
+      titleTextStyle: {
+        color: 'white',
+      },
+      pieSliceTextStyle: {
+        color: 'black',
+      },
+      legend: {
+        textStyle: {
+          color: 'white',
+        }
+      },
+      slices: {
+        0:{color: 'green'},
+        1:{color: 'red'},
+        2:{color: 'yellow'},
+      }
+    };
+
+    {/*
+      Creation of tweet sentiment data into an array for pie chart
+      Uses positive, negative and neutral tweets
+      Pie chart automatically determines total and percentages
+    */}
+    let data = [
+      ['TweetType', 'Number of Tweets'],
+      ['Positive Tweets', this.state.metrics.numPositiveTweets],
+      ['Negative Tweets', this.state.metrics.numNegativeTweets],
+      ['Neutral Tweets', this.state.metrics.numNeutralTweets],
+    ];
+
     return (
+      <div className="Twitter">
         <header className="App-header">
+          <Row>
+            {/* Render tweet sentiment pie chart with options and data */}
+            <div id="tweet-sentiment" className="tweet-sentiment">
+                {!this.state.isLoading &&
+                    <GenericChart
+                      chartType = {"PieChart"}
+                      width={'500px'}
+                      height={'300px'}
+                      data={data}
+                      options={options}
+                    />
+                }
+              </div>
+          </Row>
           <Row>
             <div id="tweet-container" className="tweet-container">
             {/* if the API return call is loading, display a loading message */}
@@ -125,40 +180,9 @@ class Twitter extends React.Component {
             ))}
             </div>
           </Row>
-          <Row>
-          {/* // Navabar component and formatting is following the template from BootStrap 4.4.x */}
-          {!this.state.isLoading &&
-            <div id="sentiment-table" name="sentiment-table" className="sentiment-table">
-              <header className="Table-header">
-                <div>
-                  <table className="table table-bordered"> 
-                    <thead>
-                    <tr>
-                      <th scope="col">Tweets analyzed</th>
-                      <th scope="col">Overall Sentiment</th>
-                      <th scope="col"># of Positve Tweets</th>
-                      <th scope="col"># of Neutral Tweets</th>
-                      <th scope="col"># of Negative Tweets</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>{(this.state.metrics.numPositiveTweets + this.state.metrics.numNeutralTweets + this.state.metrics.numNegativeTweets).toString()}</td>
-                      <td>{this.state.metrics.overallSentiment}</td>
-                      <td>{this.state.metrics.numPositiveTweets}</td>
-                      <td>{this.state.metrics.numNeutralTweets}</td>
-                      <td>{this.state.metrics.numNegativeTweets}</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    </tfoot>
-                  </table>
-                </div>
-              </header>
-            </div>
-          }
-          </Row>
+          
         </header>
+      </div>
     );
   }
 }

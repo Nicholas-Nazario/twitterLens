@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import {Row} from 'react-bootstrap';
 import axios from 'axios';
 import StockTable from './components/StockTable.js';
-import Stockchart from './components/Stockchart.js';
 import GenericChart from './components/GenericChart.js';
 
 // This class creates the Stock part of a Page
@@ -134,20 +133,36 @@ createMapOfStocks(d, s) {
     let stocks = this.state.stocks;
     let stock_map = this.state.stock_map;
 
-    let options = {
+    const options = {
       legend: 'none',
       bar: { groupWidth: '100%' }, // Remove space between bars.
       candlestick: {
           fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
           risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
       },
-      title: "Stock Price",
-      hAxis: { title: "Day" },
-      vAxis: { title: "Price" }
+      hAxis: { 
+          titleTextStyle:{color: '#FFF'},
+          textStyle:{color: '#FFF'}, 
+          title: "Day" 
+      },
+      vAxis: { 
+          titleTextStyle:{color: '#FFF'},
+          textStyle:{color: '#FFF'},
+          title: "Price"
+      },
+      textColor: '##FFFFFF',
+      backgroundColor: { fill:'transparent' },
+      'chartArea': {
+          'backgroundColor': {
+              'fill': '#2f3238',
+              'opacity': 100
+           },
+       },
+      legend: "none"
     };
     let chart_info = "CandlestickChart";
-    const stock_width = "800px";
-    const stock_height = "500px";
+    const stock_width = "1100px";
+    const stock_height = "600px";
     
     return (
       <div className="Stock">
@@ -159,9 +174,9 @@ createMapOfStocks(d, s) {
               <div className = "stock_chart">
                 {this.state.dataRet &&
                   <GenericChart
-                    chartType={"CandlestickChart"}
-                    width={"800px"}
-                    height={"500px"}
+                    chartType={chart_info}
+                    width={stock_width}
+                    height={stock_height}
                     data = {stocks}
                     options = {options}
                   />
