@@ -127,7 +127,7 @@ class Twitter extends React.Component {
           </Row>
           <Row>
           {/* // Navabar component and formatting is following the template from BootStrap 4.4.x */}
-          {!this.state.isLoading &&
+          {!this.state.isLoading && 
             <div id="sentiment-table" name="sentiment-table" className="sentiment-table">
               <header className="Table-header">
                 <div>
