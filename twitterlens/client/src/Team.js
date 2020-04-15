@@ -52,7 +52,7 @@ class Team extends Component {
                                 <img className="profile-pic" src={Nick}></img>
                                 <h2 className="hvr-underline-from-center">Nick Nazario<span>Scrum Master / UX Developer</span></h2>
                                 <div>
-                                    Nick is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2020 with a concentraion in Artificial Intelligence and Data. His work experinece includes internships as a Software Developer at MITRE, MIT Lincoln Labortatory, and Boeing. Nick will be starting a full time position with Amazon as an SDE in September 2020.
+                                    Nick is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2020 with a concentraion in Artificial Intelligence and Data. His work experience includes internships as a Software Developer at MITRE, MIT Lincoln Labortatory, and Boeing. Nick will be starting a full time position with Amazon as an SDE in September 2020.
                                 </div>
                                 <a href="https://twitter.com/nick_nazario"><i className="fab fa-twitter fa-2x"></i></a>
                                 <a href="https://github.com/nicholas-nazario"><i className="fab fa-github fa-2x"></i></a>
