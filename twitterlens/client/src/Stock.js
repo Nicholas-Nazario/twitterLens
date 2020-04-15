@@ -150,7 +150,7 @@ createMapOfStocks(d, s) {
     const stock_height = "500px";
     
     return (
-      <div className="App">
+      <div className="Stock">
         <header className="App-header">
             {/*
                 Render the chart for the stocks data here
