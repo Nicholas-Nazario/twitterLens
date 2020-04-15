@@ -18,8 +18,8 @@
     border: 1px solid rgba(255, 255, 255, 0.445);
 }
 .tweet-item, .positive-tweet-item, .neutral-tweet-item, .negative-tweet-item {
-    color: #000;
-    /* background: #2f3238; */
+    /* color: #000; */
+    background: #2f3238;
     border-bottom: 1px solid rgba(255, 255, 255, 0.445);
     word-break: break-all;
     margin: 10px 0;
@@ -31,18 +31,19 @@
     color: #FFF;
 }
 .positive-tweet-item {
-    background: #78f08e;
+    color: #78f08e;
 }
 .neutral-tweet-item {
-    background: #ebe159;
+    color: #ebe159;
 }
 .negative-tweet-item {
-    background-color: #d93434;
+    color: #d93434;
 }
 .profile-image {
     height: 30px;
     border-radius: 50%;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
+    /*change 1px -> 2px and #cccccc -> 3 classes of color */
 }
 .tweet-text {
     margin: 5px 0;
