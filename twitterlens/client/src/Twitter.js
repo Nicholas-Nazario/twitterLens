@@ -139,16 +139,16 @@ class Twitter extends React.Component {
           <Row>
             {/* Render tweet sentiment pie chart with options and data */}
             <div id="tweet-sentiment" className="tweet-sentiment">
-                {!this.state.isLoading &&
-                    <GenericChart
-                      chartType = {"PieChart"}
-                      width={'500px'}
-                      height={'300px'}
-                      data={data}
-                      options={options}
-                    />
+              {!this.state.isLoading &&
+                  <GenericChart
+                    chartType = {"PieChart"}
+                    width={'500px'}
+                    height={'300px'}
+                    data={data}
+                    options={options}
+                  />
                 }
-              </div>
+            </div>
           </Row>
           <Row>
             <div id="tweet-container" className="tweet-container">
