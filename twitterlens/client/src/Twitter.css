@@ -17,8 +17,9 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.445);
 }
-.tweet-item {
-    color: #FFF;
+.tweet-item, .positive-tweet-item, .neutral-tweet-item, .negative-tweet-item {
+    /* color: #000; */
+    background: #2f3238;
     border-bottom: 1px solid rgba(255, 255, 255, 0.445);
     word-break: break-all;
     margin: 10px 0;
@@ -26,10 +27,33 @@
     padding-bottom: 10px;
     max-width: 90vh;
 }
-.profile-image {
+.tweet-item {
+    color: #FFF;
+}
+.positive-tweet-item {
+    color: #78f08e;
+}
+.neutral-tweet-item {
+    color: #ebe159;
+}
+.negative-tweet-item {
+    color: #d93434;
+}
+.profile-image, .positive-profile-image, .neutral-profile-image, .negative-profile-image {
     height: 30px;
     border-radius: 50%;
-    border: 1px solid #ccc;
+}
+.profile-image {
+    border: 2px solid #cccccc;
+}
+.positive-profile-image {
+    border: 2px solid #78f08e;
+}
+.neutral-profile-image {
+    border: 2px solid #ebe159;
+}
+.negative-profile-image {
+    border: 2px solid #d93434; 
 }
 .tweet-text {
     margin: 5px 0;
@@ -54,4 +78,12 @@
     padding: 14px 20px;
     transition: all 0.2s linear;
     box-shadow: 0 4px 16px 0 rgba(69, 91, 99, 0.08);
+}
+.sentiment-table {
+    
+    font-size: calc(8px + 1vmin);
+    text-align: center;
+    color: white;
+    padding-top: 2.5vh;
+    box-sizing: border-box;
 }

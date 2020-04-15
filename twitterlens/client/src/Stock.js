@@ -4,7 +4,7 @@ import {Row} from 'react-bootstrap';
 import axios from 'axios';
 import StockTable from './components/StockTable.js';
 import Stockchart from './components/Stockchart.js';
-//import Moment from 'react-moment';
+import GenericChart from './components/GenericChart.js';
 
 // This class creates the Stock part of a Page
 // This component will be displayed on the front page 
@@ -133,28 +133,54 @@ createMapOfStocks(d, s) {
   render() {
     let stocks = this.state.stocks;
     let stock_map = this.state.stock_map;
+
+    let options = {
+      legend: 'none',
+      bar: { groupWidth: '100%' }, // Remove space between bars.
+      candlestick: {
+          fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
+          risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
+      },
+      title: "Stock Price",
+      hAxis: { title: "Day" },
+      vAxis: { title: "Price" }
+    };
+    let chart_info = "CandlestickChart";
+    const stock_width = "800px";
+    const stock_height = "500px";
+    
     return (
       <div className="Stock">
-        {/* Render the table for the stocks data here */}
-        <Row>
-          <div className = "stock-chart">
-            {this.state.dataRet &&
-              <Stockchart
-                data={stocks}
-              />
-            }
-          </div>
-        </Row>   
-        {/* Render the table for the stocks data here */}          
-        <Row>
-          <div className = "stock_display">
-            {this.state.dataRet &&
-              <StockTable
-                stocks={Array.from(stock_map)[0]}
-              />
-            }
-          </div>
-        </Row>
+        <header className="App-header">
+            {/*
+                Render the chart for the stocks data here
+              */}
+            <Row>
+              <div className = "stock_chart">
+                {this.state.dataRet &&
+                  <GenericChart
+                    chartType={"CandlestickChart"}
+                    width={"800px"}
+                    height={"500px"}
+                    data = {stocks}
+                    options = {options}
+                  />
+                }
+              </div>
+            </Row>   
+            {/*
+                Render the table for the stocks data here
+              */}          
+            <Row>
+              <div className = "stock_display">
+                {this.state.dataRet &&
+                  <StockTable
+                    stocks={Array.from(stock_map)[0]}
+                  />
+                }
+              </div>
+            </Row>
+        </header>
       </div>
     );
   }
