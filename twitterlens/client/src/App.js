@@ -38,12 +38,6 @@ class App extends React.Component {
     });
 
     e.preventDefault();
-
-    // //update the state of value and term before calling the search functions
-    // this.setState ({
-    //   value: '',
-    //   term: this.state.value
-    // });
     
     //check to make sure search query is not undefined or blank
     if (data.value != undefined && data.value != ''){
@@ -67,10 +61,9 @@ class App extends React.Component {
           <Row>
             {/* create a SearchBar and override the props to allow the SearchBar to use the values and methods we pass in */}
             <SearchBar 
-                    // defaultValue={this.state.value}
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    onClick={this.handleClick}/>
+              value={this.state.value}
+              onChange={this.handleChange}
+              onClick={this.handleClick}/>
           </Row>
           {/* load in the Stock and Twitter components and set a reference to each one to be able to access the component's methods */}
           <Row> <Stock ref={this.child} /> </Row>

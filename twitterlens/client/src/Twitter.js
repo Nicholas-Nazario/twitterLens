@@ -140,25 +140,25 @@ class Twitter extends React.Component {
             {/* Render tweet sentiment pie chart with options and data */}
             <div id="tweet-sentiment" className="tweet-sentiment">
               {!this.state.isLoading &&
-                  <GenericChart
-                    chartType = {"PieChart"}
-                    width={'500px'}
-                    height={'300px'}
-                    data={data}
-                    options={options}
-                  />
-                }
+                <GenericChart
+                  chartType = {"PieChart"}
+                  width={'500px'}
+                  height={'300px'}
+                  data={data}
+                  options={options}
+                />
+              }
             </div>
           </Row>
           <Row>
             <div id="tweet-container" className="tweet-container">
-            {/* if the API return call is loading, display a loading message */}
-            {this.state.isLoading && <p>Loading...</p>}
-            {/* tweets are loaded in, display the search results */}
-            {!this.state.isLoading &&
-            this.state.tweets.map((item, key) => (
-              /* code below handles the rendering of each tweet item */
-              <div key={key} className={item.sentiment + "-tweet-item"}>
+              {/* if the API return call is loading, display a loading message */}
+              {this.state.isLoading && <p>Loading...</p>}
+              {/* tweets are loaded in, display the search results */}
+              {!this.state.isLoading &&
+              this.state.tweets.map((item, key) => (
+                /* code below handles the rendering of each tweet item */
+                <div key={key} className={item.sentiment + "-tweet-item"}>
                   {/* render the user's picture */}
                   <Col xs={{ right: 10 }}>
                     <img
@@ -171,13 +171,13 @@ class Twitter extends React.Component {
                   <Col>
                     <p><a href={`https://twitter.com/${item.user.screen_name}`} target="_blank" rel="noreferrer noopener">{item.user.name}</a></p>
                   </Col>
-                <p className="tweet-text">{item.text}</p>
+                  <p className="tweet-text">{item.text}</p>
                   {/* render a link to the user's tweet */}
                   <Col>
                     <a href={`https://twitter.com/${item.user.screen_name}/statuses/${item.id_str}`} target="_blank" rel="noreferrer noopener">More...</a>
                   </Col>     
-              </div>
-            ))}
+                </div>
+              ))}
             </div>
           </Row>    
         </header>

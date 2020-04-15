@@ -32,9 +32,6 @@ app.get("/tweets", (req, res)=> {
   T.get('search/tweets', params, function(err, data, response) {
     //check to see if there are no errors
     if (err == null){
-      //log the data for debugging purposes
-      //console.log(data);
-
       //create a json to hold all important metrics about the sentiment of the search
       let metrics = {
         totalScore: 0,
@@ -48,10 +45,11 @@ app.get("/tweets", (req, res)=> {
       let twitterData = [];
       let sentiment = new Sentiment();
 
+      //loop over each tweet that was returned by the api
       for (var i = 0; i < data.statuses.length; i++) {
         //use analyze function in sentiment library to analyze the tweet sentiment
         const sentScore = sentiment.analyze(data.statuses[i].text);
-        //console.log(sentScore);
+
         //determine the tweet sentiment and increment the corresponding variable to count number of each sentiment
         var tweet_sentiment = '';
         //neutral
