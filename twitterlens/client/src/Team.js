@@ -18,6 +18,8 @@ class Team extends Component {
     // This lets the index.js read the HTML as a single object 
     render() {
         return (
+            <div className="Team">
+            <header className="Team-header">
             <div className="container">
                 <div className="row ">
                     <div className="col-md-4">
@@ -58,7 +60,9 @@ class Team extends Component {
                             <div className="profile-info">
                                 <img className="profile-pic" src={Andy}></img>
                                 <h2 className="hvr-underline-from-center">Andrew Emanuel<span>Visualization Developer</span></h2>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                <div>
+                                    Andrew is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2022 with a concentration in either AI and Data or Systems and Software. He is currently seeking opportunities starting in January 2021 for his Arch semester away.
+                                </div>
                                 <a href="https://www.instagram.com/andy.emanuel/"><i className="fab fa-instagram fa-2x"></i></a>
                                 <a href="https://github.com/emanua"><i className="fab fa-github fa-2x"></i></a>
                                 <a href="https://www.linkedin.com/in/andrew-emanuel-60b757139/"><i className="fa fa-linkedin fa-2x"></i></a>
@@ -116,7 +120,8 @@ class Team extends Component {
                     </div>
                 </div>
             </div>
-
+            </header>
+            </div>
         );
     }
 }

@@ -2,6 +2,8 @@
 import React, {Component} from 'react';
 // Logo for the Navbar
 import Logo from './logoTransparent.png';
+// CSS Imports
+import './Navbar.css';
 
 // This class creates the Navbar Object.
 // This component is displayed on everypage to allow the user to navigate the site
@@ -24,25 +26,16 @@ class Navbar extends Component {
 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active">
-                                <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Instructions <span className="sr-only">(current)</span></a>
                             </li>
-
-                            {/* NOTE:This is commented out until we decide if we want seperate pages or if we wanted a merged data page */}
-                            
-                            {/* <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Data Pages
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/stock">Stock</a>
-                                    <a class="dropdown-item" href="/twitter">Twitter</a>
-                                </div>
-                            </li> */}
-                            <li className="nav-item active">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/home">Analysis <span className="sr-only">(current)</span></a>
+                            </li>
+                            <li className="nav-item">
                                 <a className="nav-link" href="/about">About Twitter Lens <span className="sr-only">(current)</span></a>
                             </li>
-                            <li className="nav-item active">
+                            <li className="nav-item">
                                 <a className="nav-link" href="/team">Dev Team <span className="sr-only">(current)</span></a>
                             </li>
                             </ul>

@@ -12,10 +12,20 @@ class NotFound extends Component {
         return (
             <div className="NotFound">
                 <header className="NotFound-header">
-                    <h1>404 Error: Page Not Found</h1>
-                    <p>Sorry, but the page you are looking for does not exist</p>
-                    <p>Click the link below to return to the main site</p>
-                    <Link to="/">Return to Home</Link>
+                <div class="card text-center" style={{margin:50}}>
+                    <div class="card-header" style={{fontSize:30}}>
+                    404 Error: Page Not Found
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Sorry, but the page you are looking for does not exist
+                        </p>
+                        <p>
+                            Click the link below to return to the main site
+                        </p>
+                        <a href="/" class="btn btn-primary">Return to Twitter Lens</a>
+                    </div>
+                </div>
                 </header>
             </div>
           );
