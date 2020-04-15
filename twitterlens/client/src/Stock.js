@@ -135,30 +135,24 @@ createMapOfStocks(d, s) {
 
     const options = {
       legend: 'none',
+      title: 'Stock Price',
+      titleTextStyle: {
+        fontSize: 24
+      },
       bar: { groupWidth: '100%' }, // Remove space between bars.
       candlestick: {
           fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
           risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
       },
       hAxis: { 
-          titleTextStyle:{color: '#FFF'},
-          textStyle:{color: '#FFF'}, 
-          title: "Day" 
+          title: "Day", 
+          fontSize: 20
       },
       vAxis: { 
-          titleTextStyle:{color: '#FFF'},
-          textStyle:{color: '#FFF'},
-          title: "Price"
+          title: "Price",
+          fontSize: 20
       },
-      textColor: '##FFFFFF',
-      backgroundColor: { fill:'transparent' },
-      'chartArea': {
-          'backgroundColor': {
-              'fill': '#2f3238',
-              'opacity': 100
-           },
-       },
-      legend: "none"
+      
     };
     let chart_info = "CandlestickChart";
     const stock_width = "1100px";

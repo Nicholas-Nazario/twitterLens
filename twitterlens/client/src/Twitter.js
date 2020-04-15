@@ -105,13 +105,16 @@ class Twitter extends React.Component {
       is3D: true,
       titleTextStyle: {
         color: 'white',
+        fontSize: 24,
       },
       pieSliceTextStyle: {
         color: 'black',
+        fontSize: 20,
       },
       legend: {
         textStyle: {
           color: 'white',
+          fontSize: 20,
         }
       },
       slices: {
@@ -140,14 +143,14 @@ class Twitter extends React.Component {
             {/* Render tweet sentiment pie chart with options and data */}
             <div id="tweet-sentiment" className="tweet-sentiment">
               {!this.state.isLoading &&
-                <GenericChart
-                  chartType = {"PieChart"}
-                  width={'500px'}
-                  height={'300px'}
-                  data={data}
-                  options={options}
-                />
-              }
+                  <GenericChart
+                    chartType = {"PieChart"}
+                    width={'1000px'}
+                    height={'600px'}
+                    data={data}
+                    options={options}
+                  />
+                }
             </div>
           </Row>
           <Row>
