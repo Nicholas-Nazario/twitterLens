@@ -1,5 +1,13 @@
+.nav-item {
+  font-size: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .App {
   text-align: center;
+  background-color: #2f3238;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -15,7 +23,6 @@
 
 .App-header {
   background-color: #2f3238;
-  min-height: 42.34vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,24 +35,26 @@
   color: #61dafb;
 }
 
-.Stockchart {
-  text-align: center;
+.search-bar {
+  font-size: 20px;
+  margin: 10px 0;
+  word-break: break-all;
 }
 
-.Stock-header {
-  background-color: #282c34;
-  min-height: 50vh;
+.stock-chart {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.Stock {
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: normal;
-  /* font-size: calc(10px + 2vmin); */
+  font-size: calc(8px + 1vmin);
   color: white;
 } 
-
-.Twitter {
-  font-size: calc(8px + 2vmin);
-}
 
 @keyframes App-logo-spin {
   from {
