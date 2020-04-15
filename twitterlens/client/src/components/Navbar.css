@@ -1,0 +1,14 @@
+.nav-item{
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-align: center;
+    font-size: 1em;
+    transition: all .25s ease;
+  }
+
+.nav-item:hover{
+    color: #6bd0f8;
+    font-size: 1.1em;
+}
