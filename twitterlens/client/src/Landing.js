@@ -7,6 +7,7 @@ import './Landing.css';
 // This class creates the Landing Page.
 // This component is displayed on Loading the Twitter Lens App to display instructions
 // It extends the react Component inheriting essetial react functionality such as render()
+// Design Inspired by https://codepen.io/taniarascia/pen/qOjLjE
 class Landing extends Component {
     // Render the below HTML code and export as Landing
     // This lets the index.js read the HTML as a single object

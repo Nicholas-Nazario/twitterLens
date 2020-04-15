@@ -7,6 +7,7 @@ import './About.css';
 // This class creates the About Page.
 // This component is displayed on the "About Twitter Lens" page to describe the goal of our project
 // It extends the react Component inheriting essetial react functionality such as render()
+// Design Inspired by https://codepen.io/miketricking/pen/JXdzpL
 class About extends Component {
     // Render the below HTML code and export as About
     // This lets the index.js read the HTML as a single object
