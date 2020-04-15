@@ -24,7 +24,7 @@ class Landing extends Component {
                             <ol>
                                 <li>Search our list of companies by stock ticker or company name</li>
                                 <li>View auto-generated candlestick charts displaying stock data</li>
-                                <li>View tweets about the compnany, color coded to match sentiment
+                                <li>View tweets about the company, color coded to match sentiment
                                     <ul>
                                         <li className="pos">Green is Positive</li>
                                         <li className="neu">Yellow is Neutral</li>
