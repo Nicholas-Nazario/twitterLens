@@ -33,7 +33,7 @@ app.get("/tweets", (req, res)=> {
     //check to see if there are no errors
     if (err == null){
       //log the data for debugging purposes
-      console.log(data);
+      //console.log(data);
 
       //create a json to hold all important metrics about the sentiment of the search
       let metrics = {

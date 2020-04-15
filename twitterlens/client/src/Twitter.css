@@ -56,5 +56,10 @@
     box-shadow: 0 4px 16px 0 rgba(69, 91, 99, 0.08);
 }
 .sentiment-table {
-    display: none;
+    
+    font-size: calc(8px + 1vmin);
+    text-align: center;
+    color: white;
+    padding-top: 2.5vh;
+    box-sizing: border-box;
 }

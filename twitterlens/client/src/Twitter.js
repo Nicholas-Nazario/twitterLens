@@ -36,6 +36,8 @@ class Twitter extends React.Component {
     let tweetContainer = document.getElementById("tweet-container");
     let sentimentTable = document.getElementById("sentiment-table");
     tweetContainer.style.display = 'none';
+    sentimentTable.style.display = 'none';
+
     //set the state to reflect that the tweets are loading in
     this.setState({
       isLoading: true,
@@ -69,8 +71,9 @@ class Twitter extends React.Component {
         metrics
       });
 
-      //set the display of the tweet-container to 'block' to show the search results
+      //set the display of the tweet-container and sentiment-table to 'block' to show the search results
       tweetContainer.style.display = 'block';
+      sentimentTable.style.display = 'block';
     });
   }
 
@@ -125,28 +128,26 @@ class Twitter extends React.Component {
           <Row>
           {/* // Navabar component and formatting is following the template from BootStrap 4.4.x */}
           {!this.state.isLoading &&
-            <div id="sentiment-table" className="sentiment-table">
+            <div id="sentiment-table" name="sentiment-table" className="sentiment-table">
               <header className="Table-header">
                 <div>
                   <table className="table table-bordered"> 
                     <thead>
                     <tr>
-                      <th scope="col">Date</th>
-                      <th scope="col">Open ($)</th>
-                      <th scope="col">High ($)</th>
-                      <th scope="col">Low ($)</th>
-                      <th scope="col">Close ($)</th>
-                      <th scope="col">Volume (shares)</th>
+                      <th scope="col">Tweets analyzed</th>
+                      <th scope="col">Overall Sentiment</th>
+                      <th scope="col"># of Positve Tweets</th>
+                      <th scope="col"># of Neutral Tweets</th>
+                      <th scope="col"># of Negative Tweets</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                      <th scope="row">{this.props.stocks[0]}</th>
-                      <td>{this.props.stocks[1][0]}</td>
-                      <td>{this.props.stocks[1][1]}</td>
-                      <td>{this.props.stocks[1][2]}</td>
-                      <td>{this.props.stocks[1][3]}</td>
-                      <td>{this.props.stocks[1][4]}</td>
+                      <td>{(this.state.metrics.numPositiveTweets + this.state.metrics.numNeutralTweets + this.state.metrics.numNegativeTweets).toString()}</td>
+                      <td>{this.state.metrics.overallSentiment}</td>
+                      <td>{this.state.metrics.numPositiveTweets}</td>
+                      <td>{this.state.metrics.numNeutralTweets}</td>
+                      <td>{this.state.metrics.numNegativeTweets}</td>
                     </tr>
                     </tbody>
                     <tfoot>
