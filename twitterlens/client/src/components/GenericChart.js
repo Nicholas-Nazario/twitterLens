@@ -9,7 +9,7 @@ class GenericChart extends Component{
             <div className="GenericChart">
                 <header className="Generic-header">
                     <span>
-                    <a style={{ marginLeft: '.5rem' }} >
+                    <a href="# " style={{ marginLeft: '.5rem' }} >
                         <Chart
                             chartType={this.props.chartType}
                             width={this.props.width}
