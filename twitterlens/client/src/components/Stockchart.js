@@ -10,26 +10,36 @@ class Stockchart extends Component {
                 fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
                 risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
             },
-            title: "Stock Price",
-            hAxis: { title: "Day" },
-            vAxis: { title: "Price" }
+            hAxis: { 
+                titleTextStyle:{color: '#FFF'},
+                textStyle:{color: '#FFF'}, 
+                title: "Day" 
+            },
+            vAxis: { 
+                titleTextStyle:{color: '#FFF'},
+                textStyle:{color: '#FFF'},
+                title: "Price"
+            },
+            textColor: '##FFFFFF',
+            backgroundColor: { fill:'transparent' },
+            'chartArea': {
+                'backgroundColor': {
+                    'fill': '#2f3238',
+                    'opacity': 100
+                 },
+             },
+            legend: "none"
         };
 
         return (
             <div className="Stockchart">
-                <header className="Stock-header">
-                    <span>
-                    <a style={{ marginLeft: '.5rem' }} >
-                        <Chart
-                            chartType="CandlestickChart"
-                            width="800px"
-                            height="500px"
-                            data={this.props.data}
-                            options={options}
-                        /> 
-                    </a>
-                    </span>
-                </header>
+                <Chart
+                    chartType="CandlestickChart"
+                    width="1100px"
+                    height="600px"
+                    data={this.props.data}
+                    options={options}
+                /> 
             </div>
         )
     }

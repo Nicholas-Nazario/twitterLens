@@ -3,8 +3,7 @@ import React, {Component} from 'react';
 import {Row} from 'react-bootstrap';
 import axios from 'axios';
 import StockTable from './components/StockTable.js';
-import Stockchart from './components/Stockchart.js';
-//import Moment from 'react-moment';
+import GenericChart from './components/GenericChart.js';
 
 // This class creates the Stock part of a Page
 // This component will be displayed on the front page 
@@ -133,17 +132,47 @@ createMapOfStocks(d, s) {
   render() {
     let stocks = this.state.stocks;
     let stock_map = this.state.stock_map;
+
+    const options = {
+      legend: 'none',
+      title: 'Stock Price',
+      titleTextStyle: {
+        fontSize: 24
+      },
+      bar: { groupWidth: '100%' }, // Remove space between bars.
+      candlestick: {
+          fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
+          risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
+      },
+      hAxis: { 
+          title: "Day", 
+          fontSize: 20
+      },
+      vAxis: { 
+          title: "Price",
+          fontSize: 20
+      },
+      
+    };
+    let chart_info = "CandlestickChart";
+    const stock_width = "1100px";
+    const stock_height = "600px";
+    
     return (
-      <div className="App">
+      <div className="Stock">
         <header className="App-header">
             {/*
                 Render the chart for the stocks data here
               */}
             <Row>
-              <div className = "st">
+              <div className = "stock_chart">
                 {this.state.dataRet &&
-                  <Stockchart
-                    data={stocks}
+                  <GenericChart
+                    chartType={chart_info}
+                    width={stock_width}
+                    height={stock_height}
+                    data = {stocks}
+                    options = {options}
                   />
                 }
               </div>

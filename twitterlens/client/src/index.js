@@ -13,6 +13,7 @@ import Navbar from './components/Navbar';
 import NotFound from './NotFound';
 import About from './About';
 import Team from './Team';
+import Landing from './Landing';
 
 
 // This is the react routing table. 
@@ -25,7 +26,7 @@ const routing = (
       <Navbar />
       {/* Create Routing Table as described above */}
       <Switch>
-        <Route exact path="/" component={App} />
+        <Route exact path="/" component={Landing} />
         <Route path="/home" component={App} />
         <Route path="/about" component={About} />
         <Route path="/Team" component={Team} />
