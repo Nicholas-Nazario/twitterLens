@@ -31,9 +31,9 @@ class Team extends Component {
                 <div className="row ">
                     <div className="col-md-4">
                         <div className="profile-card text-center">
-                        <img className="img-responsive"  src={RiinaBack}></img>
+                        <img className="img-responsive"  src={RiinaBack} alt="Background Matthew Riina"></img>
                             <div className="profile-info">
-                                <img className="profile-pic" src={Riina}></img>
+                                <img className="profile-pic" src={Riina} alt="Matthew Riina"></img>
                                 <h2 className="hvr-underline-from-center">Matthew Riina<span>Product Owner / Twitter Developer</span></h2>
                                 <div>
                                     Matthew is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2022 with a concentration in Artificial Intelligence and Data. His work experience includes an internship as a Software Developer at IBM. Matthew is currently looking for opportunities for his Arch away semester starting January 2021.
@@ -47,9 +47,9 @@ class Team extends Component {
 
                     <div className="col-md-4">
                         <div className="profile-card text-center">
-                        <img className="img-responsive"  src={NickBack}></img>
+                        <img className="img-responsive"  src={NickBack} alt="Background Nicholas Nazario"></img>
                             <div className="profile-info">
-                                <img className="profile-pic" src={Nick}></img>
+                                <img className="profile-pic" src={Nick} alt="Nicholas Nazario"></img>
                                 <h2 className="hvr-underline-from-center">Nick Nazario<span>Scrum Master / UX Developer</span></h2>
                                 <div>
                                     Nick is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2020 with a concentraion in Artificial Intelligence and Data. His work experience includes internships as a Software Developer at MITRE, MIT Lincoln Labortatory, and Boeing. Nick will be starting a full time position with Amazon as a SDE in September 2020.
@@ -63,9 +63,9 @@ class Team extends Component {
 
                     <div className="col-md-4">
                         <div className="profile-card text-center">
-                        <img className="img-responsive"  src={AndyBack}></img>
+                        <img className="img-responsive"  src={AndyBack} alt="Background Andrew Emanuel"></img>
                             <div className="profile-info">
-                                <img className="profile-pic" src={Andy}></img>
+                                <img className="profile-pic" src={Andy} alt="Andrew Emanuel"></img>
                                 <h2 className="hvr-underline-from-center">Andrew Emanuel<span>Visualization Developer</span></h2>
                                 <div>
                                     Andrew is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2022 with a concentration in either AI and Data or Systems and Software. He is currently seeking opportunities starting in January 2021 for his Arch semester away.
@@ -80,9 +80,9 @@ class Team extends Component {
                 <div className="row ">
                     <div className="col-md-4">
                         <div className="profile-card text-center">
-                        <img className="img-responsive"  src={DanBack}></img>
+                        <img className="img-responsive"  src={DanBack} alt="Background Daniel Peladeau"></img>
                             <div className="profile-info">
-                                <img className="profile-pic" src={Dan}></img>
+                                <img className="profile-pic" src={Dan} alt="Daniel Peladeau"></img>
                                 <h2 className="hvr-underline-from-center">Daniel Peladeau<span>Stock Developer</span></h2>
                                 <div>
                                     Daniel is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2020 with a concentration in Artificial Intelligence and Data. His work experience includes internships as a Software Developer at Hayward Industries and Professional Services Intern at Amazon Web Services. Daniel will be starting a full time position with AWS as a Professional Services Consultant in August of 2020.
@@ -96,9 +96,9 @@ class Team extends Component {
 
                     <div className="col-md-4">
                         <div className="profile-card text-center">
-                        <img className="img-responsive"  src={SoloBack}></img>
+                        <img className="img-responsive"  src={SoloBack} alt="Background Matthew Solomon"></img>
                             <div className="profile-info">
-                                <img className="profile-pic" src={Solomon}></img>
+                                <img className="profile-pic" src={Solomon} alt="Matthew Solomon"></img>
                                 <h2 className="hvr-underline-from-center">Matt Solomon<span>Database Developer</span></h2>
                                 <div>
                                 Matthew Solomon is a computer science student at Rensselaer Polytechnic Institute graduating spring of 2021. His experiences include one internship at Microsoft.
@@ -112,9 +112,9 @@ class Team extends Component {
 
                     <div className="col-md-4">
                         <div className="profile-card text-center">
-                        <img className="img-responsive"  src={LogoBack}></img>
+                        <img className="img-responsive"  src={LogoBack} alt="Background Twitter Lens Dev"></img>
                             <div className="profile-info">
-                                <img className="profile-pic" src={Logo}></img>
+                                <img className="profile-pic" src={Logo} alt="Twitter Lens Dev"></img>
                                 <h2 className="hvr-underline-from-center">Twitter Lens<span>Dev Team</span></h2>
                                 <div>
                                     Contact The Team!
