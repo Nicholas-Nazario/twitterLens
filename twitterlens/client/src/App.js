@@ -40,7 +40,7 @@ class App extends React.Component {
     e.preventDefault();
     
     //check to make sure search query is not undefined or blank
-    if (data.value != undefined && data.value != ''){
+    if (data.value !== undefined && data.value !== ''){
       //call the search functions of each child to search for the value in each API
       this.child.current.searchStocks(data.value);
       this.child2.current.searchTwitter(data.value);
@@ -57,7 +57,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <a> Choose a company to get started: </a>
+          <div> Choose a company to get started: </div>
           <Row>
             {/* create a SearchBar and override the props to allow the SearchBar to use the values and methods we pass in */}
             <SearchBar 
