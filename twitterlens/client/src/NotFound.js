@@ -1,6 +1,5 @@
 // React Imports
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom'
 
 // This class creates the NotFound Page. 
 // This is the object displayed on a 404 Error
