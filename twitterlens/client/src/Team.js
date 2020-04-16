@@ -38,9 +38,9 @@ class Team extends Component {
                                 <div>
                                     Matthew is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2022 with a concentration in Artificial Intelligence and Data. His work experience includes an internship as a Software Developer at IBM. Matthew is currently looking for opportunities for his Arch away semester starting January 2021.
                                 </div>
-                                <a href="https://www.instagram.com/mattriina/"><i className="fab fa-instagram fa-2x"></i></a>
-                                <a href="https://github.com/MattRiina"><i className="fab fa-github fa-2x"></i></a>
-                                <a href="http://www.linkedin.com/in/matthew-riina-19a394178"><i className="fa fa-linkedin fa-2x"></i></a>
+                                <a href="https://www.instagram.com/mattriina/" target="_blank"><i className="fab fa-instagram fa-2x"></i></a>
+                                <a href="https://github.com/MattRiina" target="_blank"><i className="fab fa-github fa-2x"></i></a>
+                                <a href="http://www.linkedin.com/in/matthew-riina-19a394178" target="_blank"><i className="fa fa-linkedin fa-2x"></i></a>
                             </div>
                         </div>
                     </div>
@@ -54,9 +54,9 @@ class Team extends Component {
                                 <div>
                                     Nick is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2020 with a concentraion in Artificial Intelligence and Data. His work experience includes internships as a Software Developer at MITRE, MIT Lincoln Labortatory, and Boeing. Nick will be starting a full time position with Amazon as a SDE in September 2020.
                                 </div>
-                                <a href="https://twitter.com/nick_nazario"><i className="fab fa-twitter fa-2x"></i></a>
-                                <a href="https://github.com/nicholas-nazario"><i className="fab fa-github fa-2x"></i></a>
-                                <a href="https://www.linkedin.com/in/nicholas-nazario/"><i className="fa fa-linkedin fa-2x"></i></a>
+                                <a href="https://twitter.com/nick_nazario" target="_blank"><i className="fab fa-twitter fa-2x"></i></a>
+                                <a href="https://github.com/nicholas-nazario" target="_blank"><i className="fab fa-github fa-2x"></i></a>
+                                <a href="https://www.linkedin.com/in/nicholas-nazario/" target="_blank"><i className="fa fa-linkedin fa-2x"></i></a>
                             </div>
                         </div>
                     </div>
@@ -70,9 +70,9 @@ class Team extends Component {
                                 <div>
                                     Andrew is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2022 with a concentration in either AI and Data or Systems and Software. He is currently seeking opportunities starting in January 2021 for his Arch semester away.
                                 </div>
-                                <a href="https://www.instagram.com/andy.emanuel/"><i className="fab fa-instagram fa-2x"></i></a>
-                                <a href="https://github.com/emanua"><i className="fab fa-github fa-2x"></i></a>
-                                <a href="https://www.linkedin.com/in/andrew-emanuel-60b757139/"><i className="fa fa-linkedin fa-2x"></i></a>
+                                <a href="https://www.instagram.com/andy.emanuel/" target="_blank"><i className="fab fa-instagram fa-2x"></i></a>
+                                <a href="https://github.com/emanua" target="_blank"><i className="fab fa-github fa-2x"></i></a>
+                                <a href="https://www.linkedin.com/in/andrew-emanuel-60b757139/" target="_blank"><i className="fa fa-linkedin fa-2x"></i></a>
                             </div>
                         </div>
                     </div>
@@ -87,9 +87,9 @@ class Team extends Component {
                                 <div>
                                     Daniel is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2020 with a concentration in Artificial Intelligence and Data. His work experience includes internships as a Software Developer at Hayward Industries and Professional Services Intern at Amazon Web Services. Daniel will be starting a full time position with AWS as a Professional Services Consultant in August of 2020.
                                 </div>
-                                <a href="https://www.instagram.com/dcpeladeau/"><i className="fab fa-instagram fa-2x"></i></a>
-                                <a href="https://github.com/Daniel-Peladeau"><i className="fab fa-github fa-2x"></i></a>
-                                <a href="https://www.linkedin.com/in/daniel-peladeau/"><i className="fa fa-linkedin fa-2x"></i></a>
+                                <a href="https://www.instagram.com/dcpeladeau/" target="_blank"><i className="fab fa-instagram fa-2x"></i></a>
+                                <a href="https://github.com/Daniel-Peladeau" target="_blank"><i className="fab fa-github fa-2x"></i></a>
+                                <a href="https://www.linkedin.com/in/daniel-peladeau/" target="_blank"><i className="fa fa-linkedin fa-2x"></i></a>
                             </div>
                         </div>
                     </div>
@@ -103,9 +103,9 @@ class Team extends Component {
                                 <div>
                                 Matthew Solomon is a computer science student at Rensselaer Polytechnic Institute graduating spring of 2021. His experiences include one internship at Microsoft.
                                 </div>
-                                <a href="https://www.instagram.com/matthewsolomon/"><i className="fab fa-instagram fa-2x"></i></a>
-                                <a href="https://github.com/Matthew-Solomon"><i className="fab fa-github fa-2x"></i></a>
-                                <a href="https://www.linkedin.com/in/matthew-solomon-667938167"><i className="fa fa-linkedin fa-2x"></i></a>
+                                <a href="https://www.instagram.com/matthewsolomon/" target="_blank"><i className="fab fa-instagram fa-2x"></i></a>
+                                <a href="https://github.com/Matthew-Solomon" target="_blank"><i className="fab fa-github fa-2x"></i></a>
+                                <a href="https://www.linkedin.com/in/matthew-solomon-667938167" target="_blank"><i className="fa fa-linkedin fa-2x"></i></a>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@ class Team extends Component {
                                 <div>
                                 TwitterLens is a tool that utilizes live stock market data in tandem with relevant Tweets from Twitter in order to inform investors and day traders of live market sentiment.
                                 </div>
-                                <a href="https://twitter.com/dev_lens"><i className="fa fa-twitter fa-2x"></i></a>
+                                <a href="https://twitter.com/dev_lens" target="_blank"><i className="fa fa-twitter fa-2x"></i></a>
                                 <a href="mailto:twitterlensdev@gmail.com"><i className="fa fa-envelope-o fa-2x"></i></a>
                             </div>
                         </div>
