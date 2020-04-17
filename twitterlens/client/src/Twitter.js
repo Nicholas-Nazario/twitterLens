@@ -4,7 +4,7 @@ import axios from 'axios';
 import qs from 'query-string';
 import './Twitter.css';
 import GenericChart from './components/GenericChart';
-
+import { trackPromise } from 'react-promise-tracker';
 
 class Twitter extends React.Component {
   //constructor for Twitter
@@ -60,6 +60,7 @@ class Twitter extends React.Component {
     };
 
     //make call to /tweets route to the proxy server with the params and options
+    trackPromise(
     axios(options)
     .then(res => {
       //parse the tweets and metrics data from the response data
@@ -76,7 +77,7 @@ class Twitter extends React.Component {
       //set the display of the tweet-container and sentiment-table to 'block' to show the search results
       tweetContainer.style.display = 'block';
       tweetSentiment.style.display = 'block';
-    });
+    }));
   }
 
   //function that handles when the user presses the submit button
@@ -150,7 +151,7 @@ class Twitter extends React.Component {
                     data={data}
                     options={options}
                   />
-                }
+              }
             </div>
           </Row>
           <Row>
