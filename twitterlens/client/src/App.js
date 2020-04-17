@@ -58,7 +58,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div> Choose a company to get started: </div>
+          <div
+            style = {{
+              marginTop: "20px",
+              marginBottom: "20px"
+            }}
+          > Choose a company to get started: </div>
           <Row>
             {/* create a SearchBar and override the props to allow the SearchBar to use the values and methods we pass in */}
             <SearchBar 
