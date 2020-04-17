@@ -30,7 +30,7 @@ class Navbar extends Component {
                                 <a className="nav-link" href="/">Instructions <span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/home">Analysis <span className="sr-only">(current)</span></a>
+                                <a className="nav-link" href="/analysis">Analysis <span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/about">About Twitter Lens <span className="sr-only">(current)</span></a>
