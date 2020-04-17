@@ -146,7 +146,7 @@ class Twitter extends React.Component {
               {!this.state.isLoading &&
                   <GenericChart
                     chartType = {"PieChart"}
-                    width={'1000px'}
+                    width={'1100px'}
                     height={'600px'}
                     data={data}
                     options={options}
