@@ -52,7 +52,7 @@ class Team extends Component {
                                 <img className="profile-pic" src={Nick} alt="Nicholas Nazario"></img>
                                 <h2 className="hvr-underline-from-center">Nick Nazario<span>Scrum Master / UX Developer</span></h2>
                                 <div>
-                                    Nick is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2020 with a concentraion in Artificial Intelligence and Data. His work experience includes internships as a Software Developer at MITRE, MIT Lincoln Labortatory, and Boeing. Nick will be starting a full time position with Amazon as a SDE in September 2020.
+                                    Nick is a Computer Science student at Rensselaer Polytechnic Institute graduating in 2020 with a concentraion in Artificial Intelligence and Data. His work experience includes internships as a Software Developer at MITRE, MIT Lincoln Laboratory, and Boeing. Nick will be starting a full time position with Amazon as a SDE in September 2020.
                                 </div>
                                 <a href="https://twitter.com/nick_nazario" target="_blank"><i className="fab fa-twitter fa-2x"></i></a>
                                 <a href="https://github.com/nicholas-nazario" target="_blank"><i className="fab fa-github fa-2x"></i></a>
@@ -112,7 +112,10 @@ class Team extends Component {
 
                     <div className="col-md-4">
                         <div className="profile-card text-center">
-                        <img className="img-responsive"  src={LogoBack} alt="Background Twitter Lens Dev"></img>
+                        <img className="img-responsive"  src={LogoBack} alt="Background Twitter Lens Dev
+                        
+                        
+                        "></img>
                             <div className="profile-info">
                                 <img className="profile-pic" src={Logo} alt="Twitter Lens Dev"></img>
                                 <h2 className="hvr-underline-from-center">Twitter Lens<span>Dev Team</span></h2>
