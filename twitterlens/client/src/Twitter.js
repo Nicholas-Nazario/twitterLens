@@ -66,7 +66,7 @@ class Twitter extends React.Component {
       //parse the tweets and metrics data from the response data
       const tweets = res.data.items;
       const metrics = res.data.metrics;
-      console.log(metrics); 
+      
       //update the states of the variables tweets, isLoading, and metrics
       this.setState({
         tweets,
