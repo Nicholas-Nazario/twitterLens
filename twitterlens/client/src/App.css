@@ -54,7 +54,12 @@
   justify-content: normal;
   font-size: calc(8px + 1vmin);
   color: white;
-} 
+}
+
+.StockTable {
+  width: 1100px;
+  font-size: 19px;
+}
 
 @keyframes App-logo-spin {
   from {

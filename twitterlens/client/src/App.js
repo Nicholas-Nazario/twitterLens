@@ -2,9 +2,10 @@ import './App.css';
 import React from 'react';
 import './index.css';
 import Stock from './Stock';
-import SearchBar from './components/Search'
+import SearchBar from './components/Search';
 import {Row} from 'react-bootstrap';
 import Twitter from './Twitter';
+import LoadingIndicator from './components/LoadingIndicator';
 
 class App extends React.Component {
   constructor(props) {
@@ -57,7 +58,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div> Choose a company to get started: </div>
+          <div
+            style = {{
+              marginTop: "20px",
+              marginBottom: "20px"
+            }}
+          > Choose a company to get started: </div>
           <Row>
             {/* create a SearchBar and override the props to allow the SearchBar to use the values and methods we pass in */}
             <SearchBar 
@@ -65,6 +71,7 @@ class App extends React.Component {
               onChange={this.handleChange}
               onClick={this.handleClick}/>
           </Row>
+          <LoadingIndicator/>
           {/* load in the Stock and Twitter components and set a reference to each one to be able to access the component's methods */}
           <Row> <Stock ref={this.child} /> </Row>
           <Row> <Twitter ref={this.child2} /> </Row>
