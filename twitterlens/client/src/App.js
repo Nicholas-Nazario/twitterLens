@@ -75,11 +75,10 @@ class App extends React.Component {
           {/* load in the Stock and Twitter components and set a reference to each one to be able to access the component's methods */}
           <Row> <Stock ref={this.child} /> </Row>
           <Row> <Twitter ref={this.child2} /> </Row>
-      </header>
-    </div>
+        </header>
+      </div>
     );
   }
 }
-
 
 export default App;

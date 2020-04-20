@@ -39,23 +39,23 @@ class Stock extends Component {
     return sortedThirty;
   }
 
-// Function to create a map of stock data from the thirty trading days
-//    Loops through past thirty trading days
-//    Gets data from StockAPI and adds to an array
-//    Map is created with date as key and value of stock data
-// Return map to handler
-createMapOfStocks(d, s) {
-  let map = new Map();
-  for (var i in d) {
-    let stockForDate = s[d[i]];
-    let arr = [];
-    for (var j in stockForDate) {
-      arr.push(stockForDate[j]);
+  // Function to create a map of stock data from the thirty trading days
+  //    Loops through past thirty trading days
+  //    Gets data from StockAPI and adds to an array
+  //    Map is created with date as key and value of stock data
+  // Return map to handler
+  createMapOfStocks(d, s) {
+    let map = new Map();
+    for (var i in d) {
+      let stockForDate = s[d[i]];
+      let arr = [];
+      for (var j in stockForDate) {
+        arr.push(stockForDate[j]);
+      }
+      map.set(d[i], arr);
     }
-    map.set(d[i], arr);
+    return map;
   }
-  return map;
-}
 
 
   // Function to create an array of stock data from the thirty trading days
@@ -162,34 +162,34 @@ createMapOfStocks(d, s) {
     return (
       <div className="Stock">
         <header className="App-header">
-            {/*
-                Render the chart for the stocks data here
-              */}
-            <Row>
-              <div className = "stock_chart">
-                {this.state.dataRet &&
-                  <GenericChart
-                    chartType={chart_info}
-                    width={stock_width}
-                    height={stock_height}
-                    data = {stocks}
-                    options = {options}
-                  />
-                }
-              </div>
-            </Row>   
-            {/*
-                Render the table for the stocks data here
-              */}          
-            <Row>
-              <div className = "stock_display">
-                {this.state.dataRet &&
-                  <StockTable
-                    stocks={Array.from(stock_map)[0]}
-                  />
-                }
-              </div>
-            </Row>
+          {/*
+              Render the chart for the stocks data here
+            */}
+          <Row>
+            <div className = "stock_chart">
+              {this.state.dataRet &&
+                <GenericChart
+                  chartType={chart_info}
+                  width={stock_width}
+                  height={stock_height}
+                  data = {stocks}
+                  options = {options}
+                />
+              }
+            </div>
+          </Row>   
+          {/*
+              Render the table for the stocks data here
+            */}          
+          <Row>
+            <div className = "stock_display">
+              {this.state.dataRet &&
+                <StockTable
+                  stocks={Array.from(stock_map)[0]}
+                />
+              }
+            </div>
+          </Row>
         </header>
       </div>
     );
