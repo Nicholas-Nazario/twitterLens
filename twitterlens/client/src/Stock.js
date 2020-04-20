@@ -4,6 +4,7 @@ import {Row} from 'react-bootstrap';
 import axios from 'axios';
 import StockTable from './components/StockTable.js';
 import GenericChart from './components/GenericChart.js';
+import { trackPromise } from 'react-promise-tracker';
 
 // This class creates the Stock part of a Page
 // This component will be displayed on the front page 
@@ -98,6 +99,7 @@ createMapOfStocks(d, s) {
     console.log(term);
     console.log(stock_api)
   
+    trackPromise(
     axios.get(stock_api)
     .then(res => {
       let stocks = res.data['Time Series (Daily)'];
@@ -109,10 +111,9 @@ createMapOfStocks(d, s) {
         stocks:thirtyStocksArr,
         stock_map:thirtyStocksMap,
         dataRet: true
-      });
-      
-    })
-    .catch(error => console.log(error))
+      })
+      .catch(error => console.log(error))
+    }));
   }
 
   // handleClick is the function in charge of functionality after the button click

@@ -34,7 +34,7 @@ class Landing extends Component {
                                 <li>To learn about the project,  go to "About Twitter Lens" and "Dev Team"</li>
                             </ol>
                         </div>
-                        <a className="button-line" href="/home">Start Analyzing</a> 
+                        <a className="button-line" href="/analysis">Start Analyzing</a> 
                     </div>
                 </div>
             </body>

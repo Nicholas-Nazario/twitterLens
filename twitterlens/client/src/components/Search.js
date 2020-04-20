@@ -33,6 +33,7 @@ export default class SearchBar extends React.Component {
     render() {
         return (
             <div className="search-bar">
+                {this.state.isLoading && <p>Loading...</p>}
                 <Dropdown className="search-input"
                     placeholder='Select a Company'
                     search

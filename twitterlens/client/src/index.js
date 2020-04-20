@@ -27,9 +27,9 @@ const routing = (
       {/* Create Routing Table as described above */}
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/home" component={App} />
+        <Route path="/analysis" component={App} />
         <Route path="/about" component={About} />
-        <Route path="/Team" component={Team} />
+        <Route path="/team" component={Team} />
         {/* NOTE: This is were all unassigned extensions redirect */}
         <Route component={NotFound} />
       </Switch>
