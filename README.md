@@ -115,26 +115,12 @@ npm start
 
 ## Coding Standards
 
-### Python
-
-The Twitter Lens Team follows the PEP8 coding standard for all Python scripts
-
-### JavaScript
-
-The Twitter Lens Team follows the ES6 coding standard for all JavaScript scripts
-
+The Twitter Lens Team follows the ES6 coding standard for all JavaScript files
 
 ## Linters
 
-The Twitter Lens Team makes use of the following linters to enforce our coding standards
-
-### Python
-
-The Twitter Lens Team used __pylint__ as a python linter to enforce PEP8 standards
-
-### JavaScript
-
 The Twitter Lens Team used __ESLint__ as a javascript linter to enforce ES6 standards
+
 
 ## Third Party Components
 
@@ -142,5 +128,3 @@ The Twitter Lens Team used __ESLint__ as a javascript linter to enforce ES6 stan
 2. AlphaVantage, a stock data API, is used by Twitter Lens to collect stock pricing
 3. Twitter's developer API is used by Twitter Lens to collect, filter, and display tweets
 4. React.js, a free and open-source web framework, is used by Twitter Lens as the framework for the web application
-
-
